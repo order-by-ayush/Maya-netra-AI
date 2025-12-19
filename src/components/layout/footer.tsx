@@ -22,9 +22,9 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-white mb-4">Quick Links</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link href="#" className="hover:text-white">Privacy Policy</Link></li>
-              <li><Link href="#" className="hover:text-white">Terms of Service</Link></li>
-              <li><Link href="#" className="hover:text-white">Contact</Link></li>
+              <li><Link href="#" className="hover:text-primary">Privacy Policy</Link></li>
+              <li><Link href="#" className="hover:text-primary">Terms of Service</Link></li>
+              <li><Link href="#" className="hover:text-primary">Contact</Link></li>
             </ul>
           </div>
 
@@ -32,9 +32,9 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-white mb-4">Company</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link href="#" className="hover:text-white">Our Story</Link></li>
-              <li><Link href="#" className="hover:text-white">Partnership</Link></li>
-              <li><Link href="#" className="hover:text-white">Sponsorship</Link></li>
+              <li><Link href="#" className="hover:text-primary">Our Story</Link></li>
+              <li><Link href="#" className="hover:text-primary">Partnership</Link></li>
+              <li><Link href="#" className="hover:text-primary">Sponsorship</Link></li>
             </ul>
           </div>
 
@@ -42,8 +42,8 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-white mb-4">Contact</h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="mailto:aayushxidsu.11am@gmail.com" className="hover:text-white">aayushxidsu.11am@gmail.com</a></li>
-              <li><a href="tel:+917894038559" className="hover:text-white">+91 7894038559</a></li>
+              <li><a href="mailto:aayushxidsu.11am@gmail.com" className="hover:text-primary">aayushxidsu.11am@gmail.com</a></li>
+              <li><a href="tel:+917894038559" className="hover:text-primary">+91 7894038559</a></li>
               <li>Nuapada, ODISHA</li>
             </ul>
           </div>
@@ -51,10 +51,10 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
             <div className="flex items-center gap-6 text-sm">
-                <Link href="#" className="hover:text-white">LINKEDIN →</Link>
-                <Link href="#" className="hover:text-white">INSTAGRAM →</Link>
-                <Link href="#" className="hover:text-white">TWITTER →</Link>
-                <Link href="#" className="hover:text-white">GITHUB →</Link>
+                <Link href="#" className="hover:text-primary">LINKEDIN →</Link>
+                <Link href="#" className="hover:text-primary">INSTAGRAM →</Link>
+                <Link href="#" className="hover:text-primary">TWITTER →</Link>
+                <Link href="#" className="hover:text-primary">GITHUB →</Link>
             </div>
         </div>
         
@@ -65,10 +65,10 @@ export function Footer() {
                 <span>by aayush_xid_su</span>
             </div>
             <div className="flex gap-4">
-                <Link href="#" className="hover:text-white">DPA</Link>
-                <Link href="#" className="hover:text-white">T&C</Link>
-                <Link href="#" className="hover:text-white">IMPRINT</Link>
-                <Link href="#" className="hover:text-white">DATA PRIVACY</Link>
+                <Link href="#" className="hover:text-primary">DPA</Link>
+                <Link href="#" className="hover:text-primary">T&C</Link>
+                <Link href="#" className="hover:text-primary">IMPRINT</Link>
+                <Link href="#" className="hover:text-primary">DATA PRIVACY</Link>
             </div>
         </div>
         

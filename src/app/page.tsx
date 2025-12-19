@@ -34,16 +34,16 @@ export default function Home() {
           </div>
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm text-gray-300">
-          <Link href="/" className="hover:text-white">
+          <Link href="/" className="hover:text-primary">
             Home
           </Link>
-          <Link href="/detect" className="hover:text-white">
+          <Link href="/detect" className="hover:text-primary">
             Detect
           </Link>
-          <Link href="#" className="hover:text-white">
+          <Link href="#" className="hover:text-primary">
             How it works
           </Link>
-          <Link href="#" className="hover:text-white">
+          <Link href="#" className="hover:text-primary">
             Author
           </Link>
         </nav>
@@ -76,7 +76,7 @@ export default function Home() {
           </Badge>
           <h2 className="text-5xl font-bold leading-tight max-w-4xl mx-auto">
             Identify{' '}
-            <span className="text-green-400">AI-generated</span>{' '}
+            <span className="text-primary">AI-generated</span>{' '}
             videos and images with confidence.
           </h2>
           <p className="text-gray-400 max-w-lg mx-auto">

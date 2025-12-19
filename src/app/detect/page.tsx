@@ -22,16 +22,16 @@ const DetectionPage = () => {
           </div>
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm text-gray-300">
-          <Link href="/" className="hover:text-white">
+          <Link href="/" className="hover:text-primary">
             Home
           </Link>
-          <Link href="/detect" className="text-white font-bold">
+          <Link href="/detect" className="text-primary font-bold">
             Detect
           </Link>
-          <Link href="#" className="hover:text-white">
+          <Link href="#" className="hover:text-primary">
             How it works
           </Link>
-          <Link href="#" className="hover:text-white">
+          <Link href="#" className="hover:text-primary">
             Author
           </Link>
         </nav>
