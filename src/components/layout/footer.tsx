@@ -4,7 +4,7 @@ import { Heart } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-black text-gray-400 pt-16 font-body">
+    <footer className="bg-background text-gray-400 pt-16 font-body">
       <div className="container mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8 pb-8 border-b border-gray-800">
           {/* Column 1: About */}
