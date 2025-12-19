@@ -1,0 +1,162 @@
+'use client';
+
+import { useState } from 'react';
+import { BarChart, Bot, CheckCircle, Clock, ShieldAlert, Sparkles } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Skeleton } from '@/components/ui/skeleton';
+import { useToast } from '@/hooks/use-toast';
+import { explainInference } from '@/ai/flows/explain-inference';
+import { summarizeVideoAnalysis } from '@/ai/flows/summarize-video-analysis';
+
+export interface AnalysisResult {
+  confidence: number;
+  label: 'Real' | 'AI-Generated';
+  inferenceTime: number;
+}
+
+interface ResultsDisplayProps {
+  result: AnalysisResult;
+  file: File;
+  onReset: () => void;
+  analysisType: 'image' | 'video';
+}
+
+export function ResultsDisplay({ result, file, onReset, analysisType }: ResultsDisplayProps) {
+  const [isExplainModalOpen, setIsExplainModalOpen] = useState(false);
+  const [explanation, setExplanation] = useState<string | null>(null);
+  const [isExplaining, setIsExplaining] = useState(false);
+  const { toast } = useToast();
+
+  const fileUrl = URL.createObjectURL(file);
+
+  const handleExplain = async () => {
+    setIsExplainModalOpen(true);
+    setIsExplaining(true);
+    setExplanation(null);
+
+    try {
+      if (analysisType === 'image') {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = async () => {
+          const mediaDataUri = reader.result as string;
+          // Mock reasoning as the GenAI flow expects it
+          const mockReasoning = `The model detected inconsistencies in lighting and subtle artifacts around the facial features, which are common in GAN-generated images. The confidence score of ${result.confidence}% reflects a high probability of manipulation.`;
+          const res = await explainInference({ mediaDataUri, reasoning: mockReasoning });
+          setExplanation(res.explanation);
+        };
+        reader.onerror = () => {
+          throw new Error("Could not read file for explanation.");
+        }
+      } else { // video
+        const mockAnalysisResult = `Video analysis flagged multiple segments. A significant spike in AI probability was noted at 0:15-0:22 due to unnatural eye blinking patterns. Another segment at 0:45 showed subtle background warping. Overall confidence in AI generation is ${result.confidence}%.`;
+        const res = await summarizeVideoAnalysis({ analysisResult: mockAnalysisResult });
+        setExplanation(res.summary);
+      }
+    } catch (e) {
+      console.error(e);
+      toast({
+        variant: "destructive",
+        title: "Explanation Failed",
+        description: "Could not generate an explanation at this time.",
+      });
+      setIsExplainModalOpen(false);
+    } finally {
+      setIsExplaining(false);
+    }
+  };
+
+  const isAiGenerated = result.label === 'AI-Generated';
+  const confidenceColor = isAiGenerated ? 'text-destructive' : 'text-green-500';
+
+  return (
+    <div className="flex flex-col md:flex-row gap-8">
+      <div className="w-full md:w-1/2">
+        <Card className="overflow-hidden">
+          <CardContent className="p-0">
+            {analysisType === 'image' ? (
+              <Image src={fileUrl} alt="Analyzed image" width={800} height={600} className="w-full h-auto object-contain max-h-[400px]" />
+            ) : (
+              <video src={fileUrl} controls className="w-full h-auto max-h-[400px]" />
+            )}
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="w-full md:w-1/2 flex flex-col gap-4">
+        <h3 className="font-headline text-2xl font-bold">Analysis Report</h3>
+        
+        <Card>
+          <CardContent className="p-6 flex items-center justify-between">
+            <div>
+              <p className="text-sm text-muted-foreground">Result</p>
+              <p className={cn("text-2xl font-bold", isAiGenerated ? 'text-destructive' : 'text-green-500')}>
+                {result.label}
+              </p>
+            </div>
+            {isAiGenerated ? <ShieldAlert className="w-10 h-10 text-destructive" /> : <CheckCircle className="w-10 h-10 text-green-500" />}
+          </CardContent>
+        </Card>
+
+        <div className="grid grid-cols-2 gap-4">
+          <Card>
+            <CardContent className="p-4">
+              <p className="text-sm text-muted-foreground flex items-center gap-2"><BarChart className="w-4 h-4" />Confidence</p>
+              <p className={cn("text-3xl font-bold", confidenceColor)}>{result.confidence}%</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-4">
+              <p className="text-sm text-muted-foreground flex items-center gap-2"><Clock className="w-4 h-4" />Inference Time</p>
+              <p className="text-3xl font-bold">{result.inferenceTime}s</p>
+            </CardContent>
+          </Card>
+        </div>
+        
+        <div className="mt-auto flex flex-col gap-4 pt-4">
+          {isAiGenerated && (
+            <Button onClick={handleExplain} disabled={isExplaining}>
+              <Sparkles className="mr-2" />
+              {isExplaining ? 'Generating...' : 'Explain this Result'}
+            </Button>
+          )}
+          <Button onClick={onReset} variant="outline">
+            Analyze Another File
+          </Button>
+        </div>
+      </div>
+      
+      <Dialog open={isExplainModalOpen} onOpenChange={setIsExplainModalOpen}>
+        <DialogContent className="sm:max-w-[525px]">
+          <DialogHeader>
+            <DialogTitle className="font-headline flex items-center gap-2">
+              <Bot /> AI Explanation
+            </DialogTitle>
+            <DialogDescription>
+              Our AI provides an analysis of why this {analysisType} was flagged.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="py-4">
+            {isExplaining && (
+              <div className="space-y-3">
+                <Skeleton className="h-4 w-[250px]" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-[200px]" />
+              </div>
+            )}
+            {explanation && (
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {explanation}
+              </p>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+}
