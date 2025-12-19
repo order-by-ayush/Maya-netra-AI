@@ -69,10 +69,10 @@ export default function Home() {
           </div>
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm text-gray-300">
-          <Link href="#" className="hover:text-white">
+          <Link href="/" className="hover:text-white">
             Home
           </Link>
-          <Link href="#" className="hover:text-white">
+          <Link href="/detect" className="hover:text-white">
             Detect
           </Link>
           <Link href="#" className="hover:text-white">
@@ -123,8 +123,9 @@ export default function Home() {
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90"
+              asChild
             >
-              Start detection
+              <Link href="/detect">Start detection</Link>
             </Button>
             <div className="flex gap-2">
               <div className="border border-gray-700 rounded-md px-3 py-1 text-center text-sm">
