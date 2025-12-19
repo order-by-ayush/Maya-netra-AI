@@ -56,14 +56,14 @@ export function Footer() {
                 <Link href="#" className="hover:text-white">TWITTER →</Link>
                 <Link href="#" className="hover:text-white">GITHUB →</Link>
             </div>
+        </div>
+        
+        <div className="border-t border-gray-800 pt-6 pb-12 flex flex-col sm:flex-row justify-between items-center text-xs gap-4">
             <div className="flex items-center gap-2 text-sm">
                 <span>Made with</span>
                 <Heart className="w-4 h-4 text-red-500" />
                 <span>by aayush_xid_su</span>
             </div>
-        </div>
-        
-        <div className="border-t border-gray-800 pt-6 pb-12 flex justify-between items-center text-xs">
             <div className="flex gap-4">
                 <Link href="#" className="hover:text-white">DPA</Link>
                 <Link href="#" className="hover:text-white">T&C</Link>
