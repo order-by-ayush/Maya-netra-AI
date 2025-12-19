@@ -19,10 +19,7 @@ export default function Home() {
 
   return (
     <div
-      className={`min-h-screen bg-gray-900 text-white font-body bg-cover bg-center`}
-      style={{
-        backgroundImage: 'url(/hero-bg.png)',
-      }}
+      className={`min-h-screen text-white font-body bg-cover bg-center`}
     >
       <header className="py-4 px-8 flex justify-between items-center bg-black bg-opacity-30 backdrop-blur-sm border-b border-gray-800">
         <div className="flex items-center gap-3">

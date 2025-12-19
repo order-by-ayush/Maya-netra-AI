@@ -6,7 +6,7 @@ import { DetectionPanel } from '@/components/detection-panel';
 const DetectionPage = () => {
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-body">
+    <div className="min-h-screen text-foreground font-body">
       <header className="py-4 px-8 flex justify-between items-center border-b border-gray-800">
         <div className="flex items-center gap-3">
           <Link href="/">
