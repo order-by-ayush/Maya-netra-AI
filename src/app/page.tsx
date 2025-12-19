@@ -10,30 +10,24 @@ import { Card } from '@/components/ui/card';
 import { Footer } from '@/components/layout/footer';
 
 export default function Home() {
-  const [isDark, setIsDark] = useState(true);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle('dark', !isDark);
-  };
 
   return (
     <div
-      className={`min-h-screen text-white font-body bg-cover bg-center`}
+      className={`min-h-screen text-foreground font-body bg-cover bg-center`}
     >
-      <header className="py-4 px-8 flex justify-between items-center bg-black bg-opacity-30 backdrop-blur-sm border-b border-gray-800">
+      <header className="py-4 px-8 flex justify-between items-center bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="flex items-center gap-3">
-          <div className="bg-white text-black font-bold text-lg w-10 h-10 flex items-center justify-center rounded-md">
+          <div className="bg-foreground text-background font-bold text-lg w-10 h-10 flex items-center justify-center rounded-md">
             MI
           </div>
           <div>
             <h1 className="text-xl font-bold">MAYA-NETRA AI</h1>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-muted-foreground">
               Private-by-design verification
             </p>
           </div>
         </div>
-        <nav className="hidden md:flex items-center gap-6 text-sm text-gray-300">
+        <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-primary">
             Home
           </Link>
@@ -49,16 +43,7 @@ export default function Home() {
         </nav>
         <div className="flex items-center gap-4">
           <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="rounded-full hover:bg-gray-700"
-          >
-            {isDark ? <Sun size={20} /> : <Moon size={20} />}
-          </Button>
-          <Button
             variant="secondary"
-            className="bg-gray-800 text-white hover:bg-gray-700"
           >
             Sign In
           </Button>
@@ -69,7 +54,7 @@ export default function Home() {
         <div className="space-y-6 text-center">
           <Badge
             variant="outline"
-            className="border-gray-600 bg-gray-800 bg-opacity-50 text-gray-300 mx-auto"
+            className="mx-auto"
           >
             <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
             Neural forensic scan • MVP UI
@@ -79,7 +64,7 @@ export default function Home() {
             <span className="text-primary">AI-generated</span>{' '}
             videos and images with confidence.
           </h2>
-          <p className="text-gray-400 max-w-lg mx-auto">
+          <p className="text-muted-foreground max-w-lg mx-auto">
             Drag & drop an image (JPG/PNG) or video (MP4) to simulate a
             full detection workflow—upload → processing → neural analysis
             → result.
@@ -93,13 +78,13 @@ export default function Home() {
               <Link href="/detect">Start detection</Link>
             </Button>
           </div>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-muted-foreground">
             For MVP UI only: results are simulated until the inference
             backend is integrated.
           </p>
         </div>
         
-        <div className="bg-gray-800 bg-opacity-40 border border-gray-700 rounded-2xl p-6 backdrop-blur-sm shadow-2xl">
+        <div className="bg-card/50 border border-border rounded-2xl p-6 shadow-lg">
           <DetectionPanel isEmbedded={true} />
         </div>
 
@@ -114,30 +99,30 @@ export default function Home() {
             <div className="absolute top-1/2 left-0 right-0 h-px bg-border -translate-y-16 hidden md:block"></div>
             <div className="absolute top-1/2 left-1/4 w-1/2 h-px bg-border -translate-y-16 hidden md:block"></div>
             
-            <Card className="bg-card/50 backdrop-blur-sm text-center p-8 relative">
+            <Card className="bg-card/50 text-center p-8 relative">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">01</div>
-              <div className="p-4 rounded-full bg-blue-500/20 inline-block mb-4">
-                <Eye className="w-8 h-8 text-blue-400" />
+              <div className="p-4 rounded-full bg-blue-500/10 inline-block mb-4">
+                <Eye className="w-8 h-8 text-blue-500" />
               </div>
               <h3 className="text-xl font-bold mb-2">Upload Content</h3>
               <p className="text-muted-foreground">
                 Upload your image or video file through our secure interface
               </p>
             </Card>
-            <Card className="bg-card/50 backdrop-blur-sm text-center p-8 relative">
+            <Card className="bg-card/50 text-center p-8 relative">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">02</div>
-              <div className="p-4 rounded-full bg-pink-500/20 inline-block mb-4">
-                <BrainCircuit className="w-8 h-8 text-pink-400" />
+              <div className="p-4 rounded-full bg-pink-500/10 inline-block mb-4">
+                <BrainCircuit className="w-8 h-8 text-pink-500" />
               </div>
               <h3 className="text-xl font-bold mb-2">AI Analysis</h3>
               <p className="text-muted-foreground">
                 Our advanced neural networks analyze the content for manipulation signs
               </p>
             </Card>
-            <Card className="bg-card/50 backdrop-blur-sm text-center p-8 relative">
+            <Card className="bg-card/50 text-center p-8 relative">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">03</div>
-              <div className="p-4 rounded-full bg-green-500/20 inline-block mb-4">
-                <CheckCircle2 className="w-8 h-8 text-green-400" />
+              <div className="p-4 rounded-full bg-green-500/10 inline-block mb-4">
+                <CheckCircle2 className="w-8 h-8 text-green-500" />
               </div>
               <h3 className="text-xl font-bold mb-2">Get Results</h3>
               <p className="text-muted-foreground">
