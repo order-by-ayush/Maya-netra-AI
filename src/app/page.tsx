@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Sun, Moon, Eye, BrainCircuit, CheckCircle2, ShieldAlert, ShieldCheck, Zap, Cpu } from 'lucide-react';
 import { DetectionPanel } from '@/components/detection-panel';
 import { Card } from '@/components/ui/card';
+import { Footer } from '@/components/layout/footer';
 
 export default function Home() {
   const [isDark, setIsDark] = useState(true);
@@ -212,8 +213,8 @@ export default function Home() {
             </Card>
           </div>
         </section>
-
       </main>
+      <Footer />
     </div>
   );
 }
