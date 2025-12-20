@@ -625,7 +625,89 @@ export function Footer() {
                   </DialogContent>
                 </Dialog>
               </li>
-              <li><Link href="#" className="hover:text-primary">Partnership</Link></li>
+              <li>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button className="hover:text-primary">Partnership</button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px] md:max-w-2xl lg:max-w-4xl max-h-[80vh]">
+                    <DialogHeader>
+                      <DialogTitle>Strategic Partnership: MAYA NETRA AI × Xidotic Pvt. Ltd.</DialogTitle>
+                    </DialogHeader>
+                    <ScrollArea className="h-[60vh] pr-4">
+                      <div className="prose prose-sm md:prose-base max-w-none">
+                        <p>
+                          <strong>MAYA NETRA AI</strong> is proud to announce that the platform has been developed in <strong>strategic partnership with Xidotic Pvt. Ltd.</strong>, a technology-driven organization focused on innovation, research, and next-generation digital solutions.
+                        </p>
+                        <p>
+                          This partnership represents a shared commitment to <strong>responsible artificial intelligence, technical excellence, and scalable system architecture</strong>, combining MAYA NETRA AI’s expertise in <strong>deepfake and synthetic media detection</strong> with Xidotic Pvt. Ltd.’s <strong>engineering-driven development approach</strong>.
+                        </p>
+                        <hr className="my-6" />
+                        <h2>Strengthening Authenticity Intelligence Through Collaboration</h2>
+                        <p>
+                          The development of MAYA NETRA AI has been supported by Xidotic Pvt. Ltd. through <strong>technical collaboration, architectural guidance, and strategic engineering inputs</strong>. This collaboration enabled the platform to be designed with a strong emphasis on:
+                        </p>
+                        <ul>
+                          <li>High-performance AI detection pipelines</li>
+                          <li>Real-time and frame-level synthetic media analysis</li>
+                          <li>Scalable, modular, and production-ready system architecture</li>
+                          <li>Secure, privacy-first infrastructure design</li>
+                        </ul>
+                        <p>
+                          By aligning on shared technical and ethical principles, both teams worked together to ensure that MAYA NETRA AI meets the demands of modern AI deployment <strong>without compromising transparency, compliance, or user trust</strong>.
+                        </p>
+                        <hr className="my-6" />
+                        <h2>Shared Values, Unified Vision</h2>
+                        <p>
+                          MAYA NETRA AI and Xidotic Pvt. Ltd. are aligned by a common philosophy that guides every stage of development:
+                        </p>
+                        <ul>
+                          <li>Innovation with responsibility</li>
+                          <li>Privacy-by-design system architecture</li>
+                          <li>Transparency in AI decision-making</li>
+                          <li>Long-term, sustainable technology development</li>
+                        </ul>
+                        <p>
+                          This collaboration reflects the belief that <strong>AI systems designed to counter deception and misinformation must themselves be built with integrity and accountability</strong>.
+                        </p>
+                        <hr className="my-6" />
+                        <h2>Role of Xidotic Pvt. Ltd.</h2>
+                        <p>
+                          As a strategic technology partner, <strong>Xidotic Pvt. Ltd.</strong> contributed to:
+                        </p>
+                        <ul>
+                          <li>Platform engineering support and system architecture design</li>
+                          <li>Development best practices and optimization strategies</li>
+                          <li>Technical validation and architectural reviews</li>
+                          <li>Supporting MAYA NETRA AI’s long-term scalability and deployment roadmap</li>
+                        </ul>
+                        <p>
+                          This partnership ensured that MAYA NETRA AI was developed with <strong>enterprise-grade foundations</strong>, while retaining the flexibility required for future innovation and evolving threat landscapes.
+                        </p>
+                        <hr className="my-6" />
+                        <h2>Looking Forward</h2>
+                        <p>
+                          The partnership between MAYA NETRA AI and Xidotic Pvt. Ltd. marks the beginning of a <strong>long-term collaboration</strong> aimed at:
+                        </p>
+                        <ul>
+                          <li>Advancing deepfake and synthetic media detection capabilities</li>
+                          <li>Expanding real-time and edge-based AI inference systems</li>
+                          <li>Supporting research-driven AI security innovation in India</li>
+                          <li>Building trusted authenticity-verification solutions for global use cases</li>
+                        </ul>
+                        <p>
+                          Together, MAYA NETRA AI and Xidotic Pvt. Ltd. are committed to shaping the future of <strong>ethical, transparent, and high-impact AI technologies that protect truth and identity</strong>.
+                        </p>
+                        <hr className="my-6" />
+                        <h2>About Xidotic Pvt. Ltd.</h2>
+                        <p>
+                          <strong>Xidotic Pvt. Ltd.</strong> is a technology and innovation-focused organization dedicated to building <strong>scalable, research-driven digital solutions</strong>. The company supports emerging platforms through <strong>engineering expertise, system design, and strategic collaboration</strong>, helping transform innovative ideas into production-ready systems.
+                        </p>
+                      </div>
+                    </ScrollArea>
+                  </DialogContent>
+                </Dialog>
+              </li>
               <li><Link href="#" className="hover:text-primary">Sponsorship</Link></li>
             </ul>
           </div>
