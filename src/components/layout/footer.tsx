@@ -785,10 +785,10 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
             <div className="flex items-center gap-6 text-sm">
-                <Link href="#" className="hover:text-primary">LINKEDIN →</Link>
-                <Link href="#" className="hover:text-primary">INSTAGRAM →</Link>
-                <Link href="#" className="hover:text-primary">TWITTER →</Link>
-                <Link href="#" className="hover:text-primary">GITHUB →</Link>
+                <Link href="https://linkedin.com/in/ayushdas-11am" target="_blank" rel="noopener noreferrer" className="hover:text-primary">LINKEDIN →</Link>
+                <Link href="https://instagram.com/aayush_xid_su" target="_blank" rel="noopener noreferrer" className="hover:text-primary">INSTAGRAM →</Link>
+                <Link href="https://x.com/aayushxidsu" target="_blank" rel="noopener noreferrer" className="hover:text-primary">TWITTER →</Link>
+                <Link href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer" className="hover:text-primary">GITHUB →</Link>
             </div>
         </div>
         
