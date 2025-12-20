@@ -31,7 +31,7 @@ const DetectionPage = () => {
           <Link href="#" className="hover:text-primary">
             How it works
           </Link>
-          <Link href="#" className="hover:text-primary">
+          <Link href="/author" className="hover:text-primary">
             Author
           </Link>
         </nav>
