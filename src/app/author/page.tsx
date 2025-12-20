@@ -7,7 +7,7 @@ import { Card } from '@/components/ui/card';
 
 const AuthorPage = () => {
   return (
-    <div className="dark bg-background text-foreground min-h-screen font-body">
+    <div className="bg-background text-foreground min-h-screen font-body">
       <header className="py-4 px-8 flex justify-between items-center border-b border-border sticky top-0 bg-background/80 backdrop-blur-sm z-50">
         <div className="flex items-center gap-3">
           <Link href="/">
@@ -42,17 +42,12 @@ const AuthorPage = () => {
       </header>
 
       <main className="container mx-auto px-8 py-20">
-        <Card className="bg-card/80 border-border p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto">
+        <Card className="bg-card/80 border-border p-8 md:p-12 rounded-2xl shadow-lg max-w-4xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 items-center">
             <div className="md:col-span-1 flex flex-col items-center text-center">
-              <Image
-                src="https://picsum.photos/seed/author/400/400"
-                alt="Author's Photo"
-                width={200}
-                height={200}
-                className="rounded-full border-4 border-primary shadow-lg mb-4"
-                data-ai-hint="professional portrait"
-              />
+              <div className="w-48 h-48 rounded-full bg-primary text-primary-foreground flex items-center justify-center mb-4 border-4 border-primary/20 shadow-lg">
+                <span className="text-6xl font-bold">AD</span>
+              </div>
               <h2 className="text-3xl font-bold text-primary">Ayush Das</h2>
               <p className="text-muted-foreground">Cybersecurity Enthusiast & AI Developer</p>
               <div className="flex gap-4 mt-4">
@@ -64,7 +59,7 @@ const AuthorPage = () => {
             </div>
             <div className="md:col-span-2">
               <h1 className="text-4xl font-headline font-bold mb-6 border-b-2 border-primary pb-2">About the Author</h1>
-              <div className="prose prose-invert max-w-none text-muted-foreground space-y-4">
+              <div className="prose max-w-none text-muted-foreground space-y-4">
                 <p>
                   Ayush Das is an independent cybersecurity enthusiast from India with a strong foundation in artificial intelligence, computer vision, and secure software development.
                 </p>
