@@ -796,7 +796,7 @@ export function Footer() {
             <div className="flex items-center gap-2 text-sm">
                 <span>Made with</span>
                 <Heart className="w-4 h-4 text-red-500" />
-                <span>by aayush_xid_su</span>
+                <span>by <a href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer" className="hover:text-primary">aayush_xid_su</a></span>
             </div>
             <div className="flex gap-4">
                 <Link href="#" className="hover:text-primary">DPA</Link>
