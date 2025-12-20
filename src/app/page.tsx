@@ -79,10 +79,6 @@ export default function Home() {
               <Link href="/detect">Start detection</Link>
             </Button>
           </div>
-          <p className="text-xs text-muted-foreground">
-            For MVP UI only: results are simulated until the inference
-            backend is integrated.
-          </p>
         </div>
         
         <div className="bg-card/50 border border-border rounded-2xl p-6 shadow-lg">
