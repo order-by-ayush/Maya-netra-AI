@@ -708,7 +708,47 @@ export function Footer() {
                   </DialogContent>
                 </Dialog>
               </li>
-              <li><Link href="#" className="hover:text-primary">Sponsorship</Link></li>
+              <li>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button className="hover:text-primary">Sponsorship</button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px] md:max-w-2xl lg:max-w-4xl max-h-[80vh]">
+                    <DialogHeader>
+                      <DialogTitle>Sponsorship & Funding Transparency – MAYA NETRA AI</DialogTitle>
+                    </DialogHeader>
+                    <ScrollArea className="h-[60vh] pr-4">
+                      <div className="prose prose-sm md:prose-base max-w-none">
+                        <p>At present, <strong>MAYA NETRA AI</strong> is an <strong>indigenously developed platform</strong> that has <strong>not sought, accepted, or received any form of sponsorship, financial funding, grants, endorsements, or monetary support</strong> from individuals, private entities, government bodies, academic institutions, or third-party organizations.</p>
+                        <p>All research, development, and implementation efforts related to MAYA NETRA AI have been carried out <strong>independently</strong>, without external financial influence. This ensures that every technical, architectural, and strategic decision is driven solely by <strong>engineering integrity, ethical responsibility, and platform trustworthiness</strong>.</p>
+                        <hr />
+                        <h2>Commitment to Independence & Transparency</h2>
+                        <p>Maintaining independence enables MAYA NETRA AI to:</p>
+                        <ul>
+                          <li>Uphold privacy-first and responsible AI design principles</li>
+                          <li>Avoid conflicts of interest or external influence</li>
+                          <li>Retain full control over technology direction and data governance</li>
+                          <li>Deliver unbiased and reliable deepfake and synthetic media detection</li>
+                        </ul>
+                        <p>This independence is a foundational principle of MAYA NETRA AI and reflects our commitment to <strong>transparency, accountability, and user trust</strong>.</p>
+                        <hr />
+                        <h2>Future Sponsorships or Funding</h2>
+                        <p>If, in the future, MAYA NETRA AI considers engaging in <strong>sponsorships, grants, or financial collaborations</strong>, such engagements will be:</p>
+                        <ul>
+                          <li>Clearly disclosed on the official website and documentation</li>
+                          <li>Evaluated for alignment with applicable laws, ethical standards, and platform values</li>
+                          <li>Structured to ensure that user privacy, data control, and technical independence remain uncompromised</li>
+                        </ul>
+                        <blockquote><p><em>Any future sponsorship or funding will be accepted only if it aligns with the mission, ethics, and legal responsibilities of MAYA NETRA AI.</em></p></blockquote>
+                        <hr />
+                        <h2>Our Assurance</h2>
+                        <p>Users, partners, and stakeholders are assured that <strong>MAYA NETRA AI does not contain sponsored content, hidden endorsements, paid influence, or biased representations</strong> within its platform, research outputs, or public communications.</p>
+                        <p>Transparency is not optional for us—it is a <strong>core operating principle</strong>.</p>
+                      </div>
+                    </ScrollArea>
+                  </DialogContent>
+                </Dialog>
+              </li>
             </ul>
           </div>
 
