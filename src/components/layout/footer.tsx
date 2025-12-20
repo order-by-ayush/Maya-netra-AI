@@ -491,7 +491,27 @@ export function Footer() {
                   </DialogContent>
                 </Dialog>
               </li>
-              <li><Link href="#" className="hover:text-primary">Contact</Link></li>
+              <li>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button className="hover:text-primary">Contact</button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                      <DialogTitle>Contact Us – MAYA NETRA AI</DialogTitle>
+                    </DialogHeader>
+                    <div className="prose prose-sm md:prose-base max-w-none">
+                      <p>For inquiries, support, partnerships, or official communication, please reach out to us using the details below:</p>
+                      <p>
+                        <strong>Email:</strong> <a href="mailto:aayushxidsu.11am@gmail.com" className="text-primary hover:underline">aayushxidsu.11am@gmail.com</a>
+                        <br />
+                        <strong>Phone:</strong> +91 78940 38559
+                      </p>
+                      <p>We aim to respond to all legitimate queries in a timely and professional manner.</p>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </li>
             </ul>
           </div>
 
