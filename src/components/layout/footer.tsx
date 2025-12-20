@@ -7,23 +7,23 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 
 export function Footer() {
   return (
-    <footer className="bg-background text-muted-foreground pt-16 font-body">
+    <footer className="bg-[#7b2cbf] text-gray-200 pt-16 font-body">
       <div className="container mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8 pb-8 border-b border-border">
           {/* Column 1: About */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-foreground font-bold text-xl mb-4">MAYA-NETRA AI</h3>
+            <h3 className="text-white font-bold text-xl mb-4">MAYA-NETRA AI</h3>
             <p className="max-w-sm text-sm leading-relaxed">
               Identify AI-generated images and videos with high confidence using state-of-the-art machine learning models and real-time neural analysis.
             </p>
-            <p className="mt-8 text-xs text-gray-500">
+            <p className="mt-8 text-xs text-gray-400">
               © {new Date().getFullYear()} MAYA-NETRA AI. All rights reserved
             </p>
           </div>
 
           {/* Column 2: Quick Links */}
           <div>
-            <h4 className="font-bold text-foreground mb-4">Quick Links</h4>
+            <h4 className="font-bold text-white mb-4">Quick Links</h4>
             <ul className="space-y-3 text-sm">
               <li>
                 <Dialog>
@@ -517,7 +517,7 @@ export function Footer() {
 
           {/* Column 3: Company */}
           <div>
-            <h4 className="font-bold text-foreground mb-4">Company</h4>
+            <h4 className="font-bold text-white mb-4">Company</h4>
             <ul className="space-y-3 text-sm">
               <li>
                 <Dialog>
@@ -774,7 +774,7 @@ export function Footer() {
 
           {/* Column 4: Contact */}
           <div>
-            <h4 className="font-bold text-foreground mb-4">Contact</h4>
+            <h4 className="font-bold text-white mb-4">Contact</h4>
             <ul className="space-y-3 text-sm">
               <li><a href="mailto:aayushxidsu.11am@gmail.com" className="hover:text-primary">aayushxidsu.11am@gmail.com</a></li>
               <li><a href="tel:+917894038559" className="hover:text-primary">+91 7894038559</a></li>
@@ -807,7 +807,7 @@ export function Footer() {
         </div>
         
         <div className="text-center py-8">
-            <h1 className="text-7xl md:text-9xl font-black text-foreground tracking-tighter">MAYA-NETRA AI</h1>
+            <h1 className="text-7xl md:text-9xl font-black text-white tracking-tighter">MAYA-NETRA AI</h1>
         </div>
 
       </div>
