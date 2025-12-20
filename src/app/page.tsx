@@ -147,7 +147,7 @@ export default function Home() {
                     <Badge variant="destructive" className="bg-destructive/80">negative</Badge>
                   </div>
                   <p className="text-muted-foreground text-sm">
-                    Deepfakes can spread false information and manipulate public opinion
+                    Deepfake technology can be misused to create highly realistic but false images and videos that spread misinformation across social media, news platforms, and public forums. Such content can manipulate public opinion, damage institutional credibility, and create confusion during critical events such as elections or emergencies. Deepfake detection systems play a crucial role in verifying content authenticity and reducing the societal impact of false digital narratives.
                   </p>
                 </div>
               </div>
@@ -161,7 +161,7 @@ export default function Home() {
                     <Badge className="bg-green-500/80 text-white border-transparent">positive</Badge>
                   </div>
                   <p className="text-muted-foreground text-sm">
-                    Detection tools help protect individuals from unauthorized use of their likeness
+                    The unauthorized use of an individual’s face, voice, or likeness in deepfake content can result in identity theft, impersonation, fraud, and reputational harm. Detection tools help safeguard personal identity by identifying manipulated media, supporting consent-based usage, and providing evidence for digital safety and legal protection.
                   </p>
                 </div>
               </div>
@@ -175,7 +175,7 @@ export default function Home() {
                     <Badge className="bg-green-500/80 text-white border-transparent">positive</Badge>
                   </div>
                   <p className="text-muted-foreground text-sm">
-                    Legitimate uses in entertainment, education, and digital art
+                    Deepfake technology also has legitimate and ethical applications in fields such as entertainment, education, film production, and digital art. It can be used for visual effects, historical reconstructions, and immersive learning experiences. Detection platforms enable responsible creativity by ensuring transparency and clearly distinguishing AI-generated content from real media.
                   </p>
                 </div>
               </div>
@@ -189,7 +189,7 @@ export default function Home() {
                     <Badge variant="secondary">neutral</Badge>
                   </div>
                   <p className="text-muted-foreground text-sm">
-                    Drives innovation in both generation and detection technologies
+                    The development of deepfake generation technologies continuously pushes advancements in artificial intelligence, particularly in computer vision and neural networks. This progress also drives innovation in detection, forensic analysis, and AI security systems. The ongoing interaction between generation and detection contributes to balanced AI growth and responsible technological evolution.
                   </p>
                 </div>
               </div>
