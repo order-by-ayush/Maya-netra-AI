@@ -107,8 +107,13 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
         {/* Left Panel */}
         <Card className="bg-card/50">
           <CardHeader>
-            <CardTitle>Upload media</CardTitle>
-            <CardDescription>Supported: JPG, PNG, MP4 (UI-only simulation)</CardDescription>
+            <div className="flex justify-between items-start">
+              <div>
+                <CardTitle>Upload media</CardTitle>
+                <CardDescription>Supported: JPG, PNG, MP4 (UI-only simulation)</CardDescription>
+              </div>
+              <Badge variant="outline">max ~50MB</Badge>
+            </div>
           </CardHeader>
           <CardContent className="space-y-6">
             <div 
@@ -135,19 +140,20 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
               />
             </div>
 
-            <div className="text-xs text-muted-foreground">
-              <p className="font-semibold">Tip:</p>
-              <p>Try both an image and a short MP4 to see different explanation copy.</p>
+            <div className="flex justify-between items-end">
+              <div className="text-xs text-muted-foreground">
+                <p className="font-semibold">Tip:</p>
+                <p>Try both an image and a short MP4 to see different<br/>explanation copy.</p>
+              </div>
+              <Button onClick={handleRunDetection} disabled={status === 'analyzing'}>
+                {status === 'analyzing' ? 'Analyzing...' : 'Run detection'}
+              </Button>
             </div>
-
-            <Button size="lg" className="w-full" onClick={handleRunDetection} disabled={status === 'analyzing'}>
-              {status === 'analyzing' ? 'Analyzing...' : 'Run detection'}
-            </Button>
           </CardContent>
         </Card>
 
         {/* Right Panel */}
-        <Card className="bg-card/50">
+        <Card className="bg-card/50 flex flex-col">
           <CardHeader className="flex flex-row justify-between items-start">
             <div>
               <CardTitle>Result</CardTitle>
@@ -155,7 +161,7 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
             </div>
             <Badge variant={status === 'idle' ? 'outline' : 'default'}>{status === 'idle' ? 'Awaiting analysis' : status === 'analyzing' ? 'In progress' : 'Complete'}</Badge>
           </CardHeader>
-          <CardContent>
+          <CardContent className="flex-grow flex flex-col">
             {status === 'idle' && (
               <div className="h-full flex flex-col justify-center">
                 <h3 className="font-semibold mb-2">No result yet</h3>
@@ -172,6 +178,7 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
             {status === 'analyzing' && (
               <div className="h-full flex flex-col justify-center items-center text-center">
                 <p className="font-headline text-lg mb-4">Analyzing...</p>
+                 <Progress value={progress} className="w-full max-w-sm" />
               </div>
             )}
             {status === 'complete' && result && file && (
