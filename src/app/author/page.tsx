@@ -48,7 +48,9 @@ const AuthorPage = () => {
               <div className="w-48 h-48 rounded-full bg-primary text-primary-foreground flex items-center justify-center mb-4 border-4 border-primary/20 shadow-lg">
                 <span className="text-6xl font-bold">AD</span>
               </div>
-              <h2 className="text-3xl font-bold text-primary">Ayush Das</h2>
+              <h2 className="text-3xl font-bold text-primary">
+                <Link href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer">Ayush Das</Link>
+              </h2>
               <p className="text-muted-foreground">Cybersecurity Enthusiast & AI Developer</p>
               <div className="flex gap-4 mt-4">
                 <Link href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary"><Github /></Link>
@@ -61,13 +63,13 @@ const AuthorPage = () => {
               <h1 className="text-4xl font-headline font-bold mb-6 border-b-2 border-primary pb-2">About the Author</h1>
               <div className="prose max-w-none text-muted-foreground space-y-4">
                 <p>
-                  Ayush Das is an independent technologist and cybersecurity enthusiast from India, with a strong foundation in cybersecurity, computer vision, and applied AI systems, his work focuses on building practical, privacy-aware technologies that address real-world security and trust challenges.
+                  <Link href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Ayush Das</Link> is an independent technologist and cybersecurity enthusiast from India, with a strong foundation in cybersecurity, computer vision, and applied AI systems, his work focuses on building practical, privacy-aware technologies that address real-world security and trust challenges.
                 </p>
                 <p>
-                  Driven by a deep interest in ethical hacking, OSINT, and defensive security, Ayush combines hands-on technical expertise with responsible design principles to create systems that are both powerful and transparent.
+                  Driven by a deep interest in ethical hacking, OSINT, and defensive security, <Link href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Ayush</Link> combines hands-on technical expertise with responsible design principles to create systems that are both powerful and transparent.
                 </p>
                 <h3 className="text-xl font-bold text-foreground">Technical Background & Expertise</h3>
-                <p>Ayush’s technical journey spans across multiple domains, including:</p>
+                <p><Link href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Ayush’s</Link> technical journey spans across multiple domains, including:</p>
                 <ul className="list-disc list-inside">
                   <li>Cybersecurity (Offensive & Defensive Techniques)</li>
                   <li>AI & Computer Vision Systems</li>
