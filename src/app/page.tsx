@@ -1,10 +1,11 @@
 
+
 'use client'
 import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Sun, Moon, Eye, BrainCircuit, CheckCircle2, ShieldAlert, ShieldCheck, Zap, Cpu } from 'lucide-react';
+import { Sun, Moon, Eye, BrainCircuit, CheckCircle2, ShieldAlert, ShieldCheck, Zap, Cpu, MousePointerClick, LineChart, Globe, Shield } from 'lucide-react';
 import { DetectionPanel } from '@/components/detection-panel';
 import { Card } from '@/components/ui/card';
 import { Footer } from '@/components/layout/footer';
@@ -195,6 +196,59 @@ export default function Home() {
             </Card>
           </div>
         </section>
+
+        <section className="py-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold">Why Thousands Trust Our Deepfake Detection Tool</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="bg-card/50 p-6">
+              <div className="flex flex-col items-center text-center">
+                <div className="p-3 rounded-full bg-primary/10 inline-block mb-4">
+                  <MousePointerClick className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Simple & Free to Use</h3>
+                <p className="text-muted-foreground text-sm">
+                  Just upload and go. There's no sign-up, no ads, and no limits. Whether you're a teacher, journalist, or just curious, you'll get fast results with zero hassle. It works on all devices and it's completely free—forever. I use it weekly and still can't believe it's this easy.
+                </p>
+              </div>
+            </Card>
+            <Card className="bg-card/50 p-6">
+              <div className="flex flex-col items-center text-center">
+                <div className="p-3 rounded-full bg-primary/10 inline-block mb-4">
+                  <LineChart className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Natural, Accurate Results</h3>
+                <p className="text-muted-foreground text-sm">
+                  Our AI deepfake detector doesn't just flag fakes—it explains them. You'll get three result types, including a clear score and side-by-side comparisons. The results are readable, well-formatted, and make perfect sense. I love how it feels like reading plain English, not a tech manual.
+                </p>
+              </div>
+            </Card>
+            <Card className="bg-card/50 p-6">
+              <div className="flex flex-col items-center text-center">
+                <div className="p-3 rounded-full bg-primary/10 inline-block mb-4">
+                  <Globe className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">See Words in Real-World Use</h3>
+                <p className="text-muted-foreground text-sm">
+                  This tool doesn't just tell you what's fake—it shows you where and how that fake content would appear. From newsrooms to classrooms, you'll see context and meaning in action. It's a real eye-opener, and honestly, it makes spotting AI-generated stuff kinda fun.
+                </p>
+              </div>
+            </Card>
+            <Card className="bg-card/50 p-6">
+              <div className="flex flex-col items-center text-center">
+                <div className="p-3 rounded-full bg-primary/10 inline-block mb-4">
+                  <Shield className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Your Privacy Stays Private</h3>
+                <p className="text-muted-foreground text-sm">
+                  We don't save your files. Period. All analysis is done securely, and nothing leaves your screen without your say. No creepy tracking, no hidden data grabs. I've checked—this is one of the most respectful tools I've ever used.
+                </p>
+              </div>
+            </Card>
+          </div>
+        </section>
+
       </main>
       <Footer />
     </div>
