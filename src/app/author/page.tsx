@@ -61,13 +61,23 @@ const AuthorPage = () => {
               <h1 className="text-4xl font-headline font-bold mb-6 border-b-2 border-primary pb-2">About the Author</h1>
               <div className="prose max-w-none text-muted-foreground space-y-4">
                 <p>
-                  Ayush Das is an independent cybersecurity enthusiast from India with a strong foundation in artificial intelligence, computer vision, and secure software development.
+                  Ayush Das is an independent technologist and cybersecurity enthusiast from India, with a strong foundation in cybersecurity, computer vision, and applied AI systems, his work focuses on building practical, privacy-aware technologies that address real-world security and trust challenges.
                 </p>
                 <p>
-                  Through hands-on experience with modern AI systems, Ayush observed a growing concern: while generative AI was advancing rapidly, the safeguards to verify authenticity, protect identity, and preserve trust were lagging behind. This realization led to the creation of MAYA-NETRA AI—a privacy-conscious, detection-first platform.
+                  Driven by a deep interest in ethical hacking, OSINT, and defensive security, Ayush combines hands-on technical expertise with responsible design principles to create systems that are both powerful and transparent.
                 </p>
+                <h3 className="text-xl font-bold text-foreground">Technical Background & Expertise</h3>
+                <p>Ayush’s technical journey spans across multiple domains, including:</p>
+                <ul className="list-disc list-inside">
+                  <li>Cybersecurity (Offensive & Defensive Techniques)</li>
+                  <li>AI & Computer Vision Systems</li>
+                  <li>Deepfake & Synthetic Media Detection</li>
+                  <li>Network Security & Traffic Analysis</li>
+                  <li>OSINT & Reconnaissance Tooling</li>
+                  <li>Secure Web Application Development</li>
+                </ul>
                 <p>
-                  MAYA-NETRA AI is his attempt to contribute to a future where technology protects identity, preserves truth, and empowers people—not manipulates them.
+                  His experience includes developing real-world tools that prioritize security, usability, and ethical deployment, rather than purely academic experimentation.
                 </p>
               </div>
               <div className="flex gap-4 mt-8">
