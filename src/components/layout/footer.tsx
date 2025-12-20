@@ -22,7 +22,7 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link href="#" className="hover:text-primary">Privacy Policy</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-primary">Privacy Policy</Link></li>
               <li><Link href="#" className="hover:text-primary">Terms of Service</Link></li>
               <li><Link href="#" className="hover:text-primary">Contact</Link></li>
             </ul>
@@ -80,3 +80,5 @@ export function Footer() {
     </footer>
   );
 }
+
+    
