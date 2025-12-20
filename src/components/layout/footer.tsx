@@ -499,7 +499,132 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-foreground mb-4">Company</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link href="#" className="hover:text-primary">Our Story</Link></li>
+              <li>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button className="hover:text-primary">Our Story</button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px] md:max-w-2xl lg:max-w-4xl max-h-[80vh]">
+                    <DialogHeader>
+                      <DialogTitle>Our Story – MAYA NETRA AI</DialogTitle>
+                    </DialogHeader>
+                    <ScrollArea className="h-[60vh] pr-4">
+                      <div className="prose prose-sm md:prose-base max-w-none">
+                        <p>
+                          In an era where visual media defines truth, perception, and influence, the ability for machines to <strong>understand visual authenticity</strong> has become essential. As artificial intelligence continues to reshape how images and videos are created, the challenge is no longer just seeing—but <strong>discerning what is real</strong>.
+                        </p>
+                        <p>
+                          <strong>MAYA NETRA AI</strong> was created to address this challenge by redefining how deepfake and synthetic media detection is developed, deployed, and trusted.
+                        </p>
+                        <p>
+                          The name <strong>“MAYA NETRA”</strong> originates from Sanskrit philosophy—
+                          <strong>“Māyā”</strong> represents illusion, deception, or false perception, while <strong>“Netra”</strong> means vision or eye. Together, MAYA NETRA symbolizes <strong>the eye that sees through illusion</strong>—a system designed not merely to detect pixels, but to understand authenticity, context, and intent.
+                        </p>
+                        <hr className="my-6" />
+                        <h2>The Origin</h2>
+                        <p>
+                          MAYA NETRA AI is the project of <a href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Ayush Das</a>, an independent cybersecurity enthusiast from India with a strong foundation in artificial intelligence, computer vision, and cybersecurity.
+                        </p>
+                        <p>
+                          Through hands-on experience with modern AI systems, Ayush observed a growing concern: while generative AI was advancing rapidly, the safeguards to verify authenticity, protect identity, and preserve trust were lagging behind. Cloud-heavy architectures, opaque models, and reduced user control often came at the cost of privacy, transparency, and accountability.
+                        </p>
+                        <p>
+                          This realization led to the creation of MAYA NETRA AI—a <strong>privacy-conscious, detection-first platform</strong> focused on identifying AI-generated images and videos <strong>without compromising user trust or ethical boundaries</strong>.
+                        </p>
+                        <hr className="my-6" />
+                        <h2>The Concept of MAYA NETRA AI</h2>
+                        <p>
+                          From its inception, MAYA NETRA AI has been guided by a clear objective:
+                          <strong> to make deepfake detection accurate, accessible, and responsible.</strong>
+                        </p>
+                        <p>
+                          The platform integrates state-of-the-art neural networks with real-time analysis pipelines to detect and analyze:
+                        </p>
+                        <ul>
+                          <li>AI-generated images and videos</li>
+                          <li>Facial manipulation and identity spoofing</li>
+                          <li>Synthetic media artifacts and inconsistencies</li>
+                          <li>Frame-level and temporal anomalies</li>
+                          <li>Confidence-based authenticity assessment</li>
+                        </ul>
+                        <p>
+                          All while prioritizing <strong>local or controlled processing</strong>, wherever feasible, to reduce unnecessary data exposure.
+                        </p>
+                        <hr className="my-6" />
+                        <h2>MADE IN INDIA, BUILT WITH PURPOSE</h2>
+                        <p>
+                          MAYA NETRA AI is proudly developed in <strong>India</strong>, reflecting a commitment to strengthening the Indian AI ecosystem while aligning with global technical and ethical standards.
+                        </p>
+                        <p>
+                          The platform is designed with awareness of Indian legal frameworks, including evolving data protection and digital governance norms, and follows <strong>privacy-by-design</strong> principles from the ground up.
+                        </p>
+                        <p>
+                          MAYA NETRA AI demonstrates that <strong>advanced AI security and ethical responsibility can coexist</strong>—without trade-offs.
+                        </p>
+                        <hr className="my-6" />
+                        <h2>Our Core Principles</h2>
+                        <p>MAYA NETRA AI is built on four foundational pillars:</p>
+                        <ul>
+                          <li>
+                            <strong>Authentic Intelligence</strong><br />
+                            Advanced detection models engineered for precision, robustness, and real-world reliability.
+                          </li>
+                          <li>
+                            <strong>Privacy-First Design</strong><br />
+                            Minimal data retention, transparent processing flows, and strong user control.
+                          </li>
+                          <li>
+                            <strong>Responsible AI</strong><br />
+                            Technology that counters deception, misinformation, and misuse—without enabling surveillance or abuse.
+                          </li>
+                          <li>
+                            <strong>Human-Centric Trust</strong><br />
+                            AI that supports human judgment instead of replacing it.
+                          </li>
+                        </ul>
+                        <hr className="my-6" />
+                        <h2>The Vision for Tomorrow</h2>
+                        <p>
+                          MAYA NETRA AI is not a static product—it is a continuously evolving platform. The roadmap includes:
+                        </p>
+                        <ul>
+                          <li>Advanced explainable AI for detection decisions</li>
+                          <li>Cross-platform deepfake verification tools</li>
+                          <li>Edge and on-device inference capabilities</li>
+                          <li>Research collaboration and open innovation</li>
+                          <li>Scalable enterprise and institutional solutions</li>
+                        </ul>
+                        <p>
+                          By learning from real-world misuse patterns and emerging threats, MAYA NETRA AI aims to help shape the <strong>future ethics of visual authenticity</strong>.
+                        </p>
+                        <hr className="my-6" />
+                        <h2>Founder’s Note</h2>
+                        <p>
+                          When I began working on MAYA NETRA AI, my goal was not to build just another AI tool.
+                        </p>
+                        <p>
+                          The question I wanted to answer was simple—but critical:
+                          <strong> Can we detect deception without sacrificing trust?</strong>
+                        </p>
+                        <p>
+                          In a world where synthetic media is becoming indistinguishable from reality, the responsibility of AI developers extends beyond performance metrics. It extends into ethics, transparency, and accountability.
+                        </p>
+                        <p>
+                          MAYA NETRA AI is my attempt to contribute to a future where technology protects identity, preserves truth, and empowers people—not manipulates them.
+                        </p>
+                        <p>
+                          This is only the beginning.
+                        </p>
+                        <blockquote className="mt-6 border-l-2 pl-6 italic">
+                          “When illusion becomes powerful, responsibility must become stronger.”
+                          <br />
+                          — <em className="italic">Ayush Das, Founder & Creator, MAYA NETRA AI</em>
+                        </blockquote>
+                      </div>
+                    </ScrollArea>
+                  </DialogContent>
+                </Dialog>
+              </li>
               <li><Link href="#" className="hover:text-primary">Partnership</Link></li>
               <li><Link href="#" className="hover:text-primary">Sponsorship</Link></li>
             </ul>
