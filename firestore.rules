@@ -1,0 +1,184 @@
+/**
+ * Core Philosophy: This ruleset enforces a strict user-ownership security model.
+ * All data is considered private and can only be accessed by the user who created it.
+ * There is no public or anonymous access to any data within the database.
+ *
+ * Data Structure: The data is organized into three main collections:
+ * 1. /users/{userId}: A top-level collection storing user profile data. Each user's
+ *    document and subcollections are owned exclusively by them.
+ * 2. /users/{userId}/analysisRequests/{analysisRequestId}: A subcollection nested
+ *    under each user, containing their specific requests for AI analysis. Access is
+ *    inherited from the parent user document.
+ * 3. /analysisResults/{analysisResultId}: A top-level collection for all analysis
+ *    results. This structure facilitates potential backend processing but remains
+ *    secure for client access by requiring a denormalized `userId` field on each
+ *    result document, which is used for all authorization checks.
+ *
+ * Key Security Decisions:
+ * - User Isolation: A user can only ever read or write their own data.
+ * - No Global Listing: Listing all users or all analysis results is explicitly
+ *   disallowed to prevent data leakage and enumeration attacks. Clients must query
+ *   for their own specific data.
+ * - Authorization Independence: By denormalizing the `userId` onto each
+ *   `analysisResult` document, we avoid slow, costly, and sometimes impossible `get()`
+ *   calls to other collections within security rules. This makes rules faster,
+ *   cheaper, and more secure.
+ * - Path and Data Consistency: Rules enforce that the ownership data within a
+ *   document's fields (e.g., `userId`) matches the ownership implied by the
+ *   document's path, ensuring relational integrity.
+ *
+ * Denormalization for Authorization: The `/analysisResults` collection is a prime
+ * example of this strategy. Instead of looking up the parent `analysisRequest` to
+ * determine ownership, each `/analysisResults/{analysisResultId}` document MUST
+ * contain a `userId` field. This allows a simple, fast, and secure rule like
+ * `resource.data.userId == request.auth.uid` directly on the document being accessed.
+ *
+ * Structural Segregation: User-specific `analysisRequests` are nested within the
+ * user's private data tree, making them easy to secure via path-based ownership.
+ * In contrast, `analysisResults` are in a separate top-level collection to support
+ * different query patterns or backend access, while still being secured on a
+ * per-document basis using denormalized ownership.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ----------------------------------------------------------------------
+    // Helper Functions
+    // ----------------------------------------------------------------------
+
+    /**
+     * Checks if the user is authenticated.
+     */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    /**
+     * Checks if the requesting user's UID matches the provided userId from the path.
+     * Use for resources directly under a user's path, e.g., /users/{userId}.
+     */
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    /**
+     * Checks if the requesting user is the owner of an existing document.
+     * This prevents unauthorized writes to non-existent documents.
+     */
+    function isExistingOwner(userId) {
+      return isOwner(userId) && resource != null;
+    }
+
+    /**
+     * Checks if the requesting user is the owner of a document by looking at a
+     * 'userId' field directly on the document's data.
+     * Use for top-level collections with denormalized ownership.
+     */
+    function isDocumentOwner() {
+      return isSignedIn() && resource.data.userId == request.auth.uid;
+    }
+    
+    /**
+     * Validates that an incoming 'User' document has its internal 'id' field
+     * set correctly to match the user's auth UID.
+     */
+    function hasValidUserCreateData(userId) {
+      return request.resource.data.id == userId;
+    }
+    
+    /**
+     * Enforces that the 'id' field of a 'User' document is immutable on update.
+     */
+    function hasValidUserUpdateData() {
+      return request.resource.data.id == resource.data.id;
+    }
+
+    /**
+     * Validates that a new document in a user's subcollection has its internal
+     * 'userId' field correctly linking back to the parent user path.
+     */
+    function hasValidSubcollectionCreateData(userId) {
+      return request.resource.data.userId == userId;
+    }
+
+    /**
+     * Enforces that the 'userId' foreign key field is immutable on update
+     * for documents in a user's subcollection.
+     */
+    function hasValidSubcollectionUpdateData() {
+      return request.resource.data.userId == resource.data.userId;
+    }
+
+    /**
+     * Validates that a new document with denormalized ownership has its internal
+     * 'userId' field set to the creator's auth UID.
+     */
+    function hasValidDenormalizedCreateData() {
+      return request.resource.data.userId == request.auth.uid;
+    }
+
+    /**
+     * Enforces that the 'userId' ownership field is immutable on update for a
+     * document with denormalized ownership.
+     */
+    function hasValidDenormalizedUpdateData() {
+      return request.resource.data.userId == resource.data.userId;
+    }
+
+
+    // ----------------------------------------------------------------------
+    // Collection Rules
+    // ----------------------------------------------------------------------
+
+    /**
+     * @description Users can create their own profile, and read, update, or delete it.
+     *              No user can see or list other users' profiles.
+     * @path /users/{userId}
+     * @allow (create) An authenticated user creating their own document: auth.uid == userId.
+     * @deny (get) A user trying to read another user's profile: auth.uid != userId.
+     * @principle Restricts access to a user's own data tree (Self-Creation).
+     */
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow list: if false;
+      allow create: if isOwner(userId) && hasValidUserCreateData(userId);
+      allow update: if isExistingOwner(userId) && hasValidUserUpdateData();
+      allow delete: if isExistingOwner(userId);
+
+      /**
+       * @description A user can manage their own analysis requests. They can create,
+       *              view, update, and delete any request belonging to them.
+       * @path /users/{userId}/analysisRequests/{analysisRequestId}
+       * @allow (list) A user listing their own analysis requests.
+       * @deny (create) A user trying to create an analysis request under another user's ID.
+       * @principle Enforces document ownership for a user-specific subcollection.
+       */
+      match /analysisRequests/{analysisRequestId} {
+        allow get: if isOwner(userId);
+        allow list: if isOwner(userId);
+        allow create: if isOwner(userId) && hasValidSubcollectionCreateData(userId);
+        allow update: if isExistingOwner(userId) && hasValidSubcollectionUpdateData();
+        allow delete: if isExistingOwner(userId);
+      }
+    }
+
+    /**
+     * @description Analysis results are private. Users can only access results that
+     *              are explicitly linked to their user ID via a denormalized field.
+     * @path /analysisResults/{analysisResultId}
+     * @allow (get) An authenticated user reading a result where result.data.userId == auth.uid.
+     * @deny (list) Listing the entire collection is forbidden to prevent data leakage.
+     * @deny (update) A user trying to change another user's analysis result.
+     * @principle Uses denormalized ownership data to provide secure, per-document access
+     *            in a top-level collection, avoiding costly `get` calls.
+     */
+    match /analysisResults/{analysisResultId} {
+      allow get: if isDocumentOwner();
+      allow list: if false; // Deny listing the global collection to prevent data leakage.
+      allow create: if isSignedIn() && hasValidDenormalizedCreateData();
+      allow update: if resource != null && isDocumentOwner() && hasValidDenormalizedUpdateData();
+      allow delete: if resource != null && isDocumentOwner();
+    }
+  }
+}
