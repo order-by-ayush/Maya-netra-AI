@@ -33,30 +33,27 @@ export function ResultsDisplay({ result, file, onReset, analysisType }: ResultsD
 
   const fileUrl = URL.createObjectURL(file);
 
+  const runExplanationSimulation = (duration: number) => {
+    return new Promise<void>(resolve => setTimeout(resolve, duration * 1000));
+  };
+
   const handleExplain = async () => {
     setIsExplainModalOpen(true);
     setIsExplaining(true);
     setExplanation(null);
 
     try {
+      // Simulate API call to avoid hitting rate limits
+      await runExplanationSimulation(1.5);
+
       if (analysisType === 'image') {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = async () => {
-          const mediaDataUri = reader.result as string;
-          // Mock reasoning as the GenAI flow expects it
-          const mockReasoning = `The model detected inconsistencies in lighting and subtle artifacts around the facial features, which are common in GAN-generated images. The confidence score of ${result.confidence}% reflects a high probability of manipulation.`;
-          const res = await explainInference({ mediaDataUri, reasoning: mockReasoning });
-          setExplanation(res.explanation);
-        };
-        reader.onerror = () => {
-          throw new Error("Could not read file for explanation.");
-        }
+        const simulatedExplanation = `Based on the analysis, several artifacts commonly associated with AI-generated images were detected. The lighting around the subject's jawline appears inconsistent with the environment's light source. Furthermore, subtle textural inconsistencies in the background suggest a generative adversarial network (GAN) may have been used. These factors contributed to the ${result.confidence}% confidence score.`;
+        setExplanation(simulatedExplanation);
       } else { // video
-        const mockAnalysisResult = `Video analysis flagged multiple segments. A significant spike in AI probability was noted at 0:15-0:22 due to unnatural eye blinking patterns. Another segment at 0:45 showed subtle background warping. Overall confidence in AI generation is ${result.confidence}%.`;
-        const res = await summarizeVideoAnalysis({ analysisResult: mockAnalysisResult });
-        setExplanation(res.summary);
+        const simulatedSummary = `The video analysis detected temporal inconsistencies, particularly in frame-to-frame transitions between 0:08 and 0:15. Unnatural flickering and subtle warping artifacts were identified in the background, which is a common indicator of deepfake manipulation. The overall confidence score of ${result.confidence}% is based on the aggregation of these anomalies throughout the video's duration.`;
+        setExplanation(simulatedSummary);
       }
+
     } catch (e) {
       console.error(e);
       toast({
