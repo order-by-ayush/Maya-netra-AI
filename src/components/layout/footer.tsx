@@ -1004,8 +1004,160 @@ export function Footer() {
                   </ScrollArea>
                 </DialogContent>
               </Dialog>
+                <Dialog>
+                   <DialogTrigger asChild>
+                     <button className="hover:text-primary">IMPRINT</button>
+                   </DialogTrigger>
+                   <DialogContent className="sm:max-w-[425px] md:max-w-2xl lg:max-w-4xl max-h-[80vh]">
+                     <DialogHeader>
+                       <DialogTitle>MAYA NETRA AI — Authenticity & Deepfake Detection Platform (India)</DialogTitle>
+                       <DialogDescription>
+                         Last Updated: 1 JANUARY 2026
+                       </DialogDescription>
+                     </DialogHeader>
+                     <ScrollArea className="h-[60vh] pr-4">
+                       <div className="prose prose-sm md:prose-base max-w-none">
+                         <p>
+                           This Imprint (“Legal Notice”) is published in compliance with the following laws and regulations of India:
+                         </p>
+                         <ul>
+                           <li>Sections 65A & 65B of the Information Technology Act, 2000</li>
+                           <li>Rule 3(1) of the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021</li>
+                           <li>Digital Personal Data Protection Act, 2023 (DPDP Act)</li>
+                           <li>Indian Contract Act, 1872</li>
+                           <li>Applicable commercial, cybersecurity, and digital compliance requirements in India</li>
+                         </ul>
+                         <p>
+                           This notice provides legally mandated information regarding the ownership, operation, and responsible entities behind <strong>MAYA NETRA AI</strong>.
+                         </p>
+                         <hr />
+                         <h2>1. Service Provider Information</h2>
+                         <p>
+                           <strong>Legal Name:</strong> MAYA NETRA AI<br />
+                           <strong>Nature of Platform:</strong> AI-based Deepfake & Synthetic Media Detection<br />
+                           <strong>Registered Jurisdiction:</strong> India
+                         </p>
+                         <hr />
+                         <h2>2. Contact Information</h2>
+                         <p>
+                           <strong>Official Contact Email:</strong><br />
+                           📧 <a href="mailto:aayushxidsu.11am@gmail.com" className="text-primary hover:underline">aayushxidsu.11am@gmail.com</a>
+                         </p>
+                         <p>
+                           <strong>Contact Number:</strong><br />
+                           📞 +91 78940 38559
+                         </p>
+                         <hr />
+                         <h2>3. Authorized Representative</h2>
+                         <p>
+                           <strong>Name:</strong> Ayush Das<br />
+                           <strong>Designation:</strong> Founder & Creator
+                         </p>
+                         <hr />
+                         <h2>4. Data Protection & Grievance Officer</h2>
+                         <p>
+                           In compliance with the <strong>Information Technology Act, 2000</strong> and the <strong>Digital Personal Data Protection Act, 2023</strong>, MAYA NETRA AI has designated the following contact for data protection and grievance redressal:
+                         </p>
+                         <p>
+                           <strong>Grievance & Data Protection Contact:</strong><br />
+                           📧 <a href="mailto:aayushxidsu.11am@gmail.com" className="text-primary hover:underline">aayushxidsu.11am@gmail.com</a>
+                         </p>
+                         <p>All data-related queries, complaints, or requests shall be addressed through the above channel.</p>
+                         <hr />
+                         <h2>5. Platform Description</h2>
+                         <p>
+                           <strong>MAYA NETRA AI</strong> provides advanced AI-driven solutions, including:
+                         </p>
+                         <ul>
+                           <li>Deepfake and synthetic media detection</li>
+                           <li>Image and video authenticity verification</li>
+                           <li>Frame-level AI analysis and inference</li>
+                           <li>Metadata-based manipulation detection</li>
+                           <li>Privacy-first, on-device and real-time processing</li>
+                         </ul>
+                         <p>
+                           The platform is designed for <strong>research, enterprise, security, and public-interest use cases</strong>, operating within India and supporting global users where legally permitted.
+                         </p>
+                         <hr />
+                         <h2>6. Regulatory Compliance Statement</h2>
+                         <p>
+                           MAYA NETRA AI operates in accordance with applicable Indian laws, including but not limited to:
+                         </p>
+                         <ul>
+                           <li>Information Technology Act, 2000 and IT Amendment Act, 2008</li>
+                           <li>IT (Reasonable Security Practices & Sensitive Personal Data) Rules, 2011</li>
+                           <li>CERT-In Cybersecurity Directions, 2022</li>
+                           <li>Digital Personal Data Protection Act, 2023</li>
+                           <li>Indian Evidence Act, 1872 (Electronic Records – Section 65B)</li>
+                           <li>Indian Contract Act, 1872</li>
+                         </ul>
+                         <p>
+                           MAYA NETRA AI does <strong>not knowingly host, generate, or distribute illegal, prohibited, or harmful content</strong>.
+                         </p>
+                         <hr />
+                         <h2>7. Liability Disclaimer</h2>
+                         <p>
+                           While reasonable efforts are made to ensure accuracy, reliability, and availability, <strong>MAYA NETRA AI assumes no liability</strong> for:
+                         </p>
+                         <ul>
+                           <li>Errors, inaccuracies, or omissions in AI-generated outputs</li>
+                           <li>Temporary service disruptions or technical failures</li>
+                           <li>Misuse or unlawful use of the platform by users or third parties</li>
+                           <li>Decisions or actions taken based on AI detection results</li>
+                         </ul>
+                         <p>
+                           AI-generated outputs are <strong>informational in nature</strong> and must not be treated as legal, forensic, or professional advice.
+                         </p>
+                         <p>
+                           Use of MAYA NETRA AI is governed exclusively by its <strong>Terms & Conditions</strong>, <strong>Privacy Policy</strong>, and <strong>Data Processing Agreement</strong>.
+                         </p>
+                         <hr />
+                         <h2>8. Copyright & Intellectual Property</h2>
+                         <p>
+                           Unless explicitly stated otherwise:
+                         </p>
+                         <ul>
+                           <li>All software, AI models, algorithms, UI designs, documentation, and branding are the exclusive intellectual property of <strong>MAYA NETRA AI</strong></li>
+                           <li>Unauthorized copying, reproduction, scraping, reverse engineering, or redistribution is strictly prohibited</li>
+                           <li>Third-party libraries and components remain the property of their respective owners and are governed by their respective licenses</li>
+                         </ul>
+                         <hr />
+                         <h2>9. Dispute Resolution & Jurisdiction</h2>
+                         <p>
+                           All disputes arising from the use of MAYA NETRA AI shall be governed by the <strong>laws of India</strong>.
+                         </p>
+                         <p>
+                           <strong>Exclusive Jurisdiction:</strong><br />
+                           Courts of <strong>Nuapada, Odisha, India</strong>
+                         </p>
+                         <hr />
+                         <h2>10. Contact for Legal Notices</h2>
+                         <p>
+                           All legal notices, compliance communications, or official correspondence shall be addressed to:
+                         </p>
+                         <p>
+                           📧 **Email:** <a href="mailto:aayushxidsu.11am@gmail.com" className="text-primary hover:underline">aayushxidsu.11am@gmail.com</a>
+                         </p>
+                         <hr />
+                         <h2>11. Publication Scope</h2>
+                         <p>
+                           This Imprint applies to:
+                         </p>
+                         <ul>
+                           <li>MAYA NETRA AI Website</li>
+                           <li>MAYA NETRA AI Web and Mobile Applications</li>
+                           <li>MAYA NETRA AI Documentation, APIs, and Developer Portals</li>
+                         </ul>
+                         <hr />
+                         <h2>12. Final Note</h2>
+                         <p>
+                           This Imprint is reviewed periodically and may be updated at any time to reflect changes in legal requirements, regulatory frameworks, or business operations. Continued use of the platform constitutes acceptance of the updated notice.
+                         </p>
+                       </div>
+                     </ScrollArea>
+                   </DialogContent>
+                 </Dialog>
                 <Link href="#" className="hover:text-primary">T&C</Link>
-                <Link href="#" className="hover:text-primary">IMPRINT</Link>
                 <Link href="#" className="hover:text-primary">DATA PRIVACY</Link>
             </div>
         </div>
