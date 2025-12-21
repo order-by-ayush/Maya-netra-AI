@@ -30,7 +30,7 @@ const AuthorPage = () => {
             Detect
           </Link>
           <Link href="#" className="hover:text-primary">
-            How it works
+            Tools
           </Link>
           <Link href="/author" className="text-primary font-bold">
             Author

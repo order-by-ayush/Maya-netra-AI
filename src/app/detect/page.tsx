@@ -29,7 +29,7 @@ const DetectionPage = () => {
             Detect
           </Link>
           <Link href="#" className="hover:text-primary">
-            How it works
+            Tools
           </Link>
           <Link href="/author" className="hover:text-primary">
             Author
