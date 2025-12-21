@@ -1157,7 +1157,228 @@ export function Footer() {
                      </ScrollArea>
                    </DialogContent>
                  </Dialog>
-                <Link href="#" className="hover:text-primary">T&C</Link>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="hover:text-primary">T&C</button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px] md:max-w-2xl lg:max-w-4xl max-h-[80vh]">
+                  <DialogHeader>
+                    <DialogTitle>MAYA NETRA AI – Terms & Conditions</DialogTitle>
+                    <DialogDescription>
+                      Effective Date: 1 January 2026. Last Updated: 1 January 2026
+                    </DialogDescription>
+                  </DialogHeader>
+                  <ScrollArea className="h-[60vh] pr-4">
+                    <div className="prose prose-sm md:prose-base max-w-none">
+                      <p>Welcome to <strong>MAYA NETRA AI</strong> (“Platform”, “Company”, “We”, “Us”, “Our”). By accessing, browsing, or using our website, applications, tools, APIs, or services (“Services”), you (“User”, “You”) agree to be bound by these Terms & Conditions. If you do not agree, you must immediately discontinue use of the Services.</p>
+
+                      <hr />
+
+                      <h2>1. General Provisions</h2>
+                      <p>1.1 These Terms govern your access to and use of MAYA NETRA AI, including:</p>
+                      <ul>
+                        <li>AI-based deepfake detection for images and videos</li>
+                        <li>Media authenticity analysis and confidence scoring</li>
+                        <li>Dashboards, APIs, tools, documentation, and related services</li>
+                      </ul>
+                      <p>1.2 These Terms constitute a legally binding agreement under the <strong>Indian Contract Act, 1872</strong>.</p>
+                      <p>1.3 By using the Services, you confirm that:</p>
+                      <ul>
+                        <li>You are at least <strong>18 years old</strong></li>
+                        <li>You are legally competent to enter into a contract</li>
+                      </ul>
+                      <p>1.4 MAYA NETRA AI reserves the right to modify, restrict, suspend, or discontinue any part of the Services at any time, temporarily or permanently.</p>
+
+                      <hr />
+
+                      <h2>2. Definitions</h2>
+                      <ul>
+                        <li><strong>“Platform / Service”</strong>: MAYA NETRA AI’s website, AI models, detection systems, APIs, tools, and documentation</li>
+                        <li><strong>“User”</strong>: Any individual or organization accessing or using the Services</li>
+                        <li><strong>“Content”</strong>: Images, videos, or media uploaded by Users</li>
+                        <li><strong>“Detection Output”</strong>: AI-generated analysis, confidence scores, or classifications</li>
+                        <li><strong>“Personal Data”</strong>: As defined under the Digital Personal Data Protection Act, 2023</li>
+                      </ul>
+
+                      <hr />
+
+                      <h2>3. Service Availability & Support</h2>
+                      <p>3.1 We strive to provide reliable access but <strong>do not guarantee uninterrupted, error-free, or continuous availability</strong>.</p>
+                      <p>3.2 The Services may be unavailable due to:</p>
+                      <ul>
+                        <li>Maintenance or upgrades</li>
+                        <li>System or network failures</li>
+                        <li>Force majeure events</li>
+                      </ul>
+                      <p>3.3 MAYA NETRA AI shall not be liable for outages caused by:</p>
+                      <ul>
+                        <li>Internet failures</li>
+                        <li>User infrastructure</li>
+                        <li>Third-party service providers</li>
+                        <li>Cyber incidents beyond our control</li>
+                      </ul>
+
+                      <hr />
+
+                      <h2>4. User Responsibilities & Lawful Use</h2>
+                      <p>4.1 Users are solely responsible for ensuring that:</p>
+                      <ul>
+                        <li>Uploaded media is lawfully obtained</li>
+                        <li>All required consents and permissions are obtained</li>
+                        <li>Use of the platform complies with applicable laws</li>
+                      </ul>
+                      <p>4.2 Users must <strong>not upload or process</strong>:</p>
+                      <ul>
+                        <li>Content without lawful authority or consent</li>
+                        <li>Illegal, abusive, or harmful material</li>
+                        <li>Content violating privacy, IP, or personality rights</li>
+                      </ul>
+                      <p>4.3 MAYA NETRA AI does <strong>not verify ownership, consent, or legality</strong> of uploaded content.</p>
+
+                      <hr />
+
+                      <h2>5. Deepfake Detection & AI Output Disclaimer</h2>
+                      <p>5.1 Detection outputs are generated using <strong>probabilistic artificial intelligence models</strong>.</p>
+                      <p>5.2 Outputs:</p>
+                      <ul>
+                        <li>May contain inaccuracies or errors</li>
+                        <li>Do not constitute legal, forensic, or professional advice</li>
+                      </ul>
+                      <p>5.3 Final responsibility for interpretation, verification, and usage of results lies <strong>entirely with the User</strong>.</p>
+
+                      <hr />
+
+                      <h2>6. Payments & Pricing (If Applicable)</h2>
+                      <p>6.1 Certain features may be paid or usage-based.</p>
+                      <p>6.2 Prices may change at any time and may include applicable taxes.</p>
+                      <p>6.3 Payments are non-refundable unless required by law.</p>
+
+                      <hr />
+
+                      <h2>7. Intellectual Property Rights</h2>
+                      <p>7.1 All platform components, including AI models, algorithms, UI/UX, branding, and documentation, are the intellectual property of <strong>MAYA NETRA AI</strong>, unless otherwise stated.</p>
+                      <p>7.2 Users are granted a <strong>limited, non-exclusive, revocable license</strong> to use the Services.</p>
+                      <p>7.3 Users shall not:</p>
+                      <ul>
+                        <li>Reverse engineer, decompile, or tamper with the platform</li>
+                        <li>Redistribute, resell, or sublicense the Services</li>
+                        <li>Claim ownership over AI models or outputs</li>
+                      </ul>
+
+                      <hr />
+
+                      <h2>8. Prohibited Uses</h2>
+                      <p>Users shall not use the Platform for:</p>
+                      <ul>
+                        <li>Creating, enhancing, or distributing deepfakes</li>
+                        <li>Surveillance or monitoring without consent</li>
+                        <li>Harassment, impersonation, defamation, or fraud</li>
+                        <li>Discrimination or unlawful profiling</li>
+                        <li>Any activity prohibited under Indian law</li>
+                      </ul>
+                      <p>Violation may result in immediate termination.</p>
+
+                      <hr />
+
+                      <h2>9. Data & Privacy</h2>
+                      <p>9.1 All data processing is governed by our <strong>Privacy Policy</strong>.</p>
+                      <p>9.2 MAYA NETRA AI does not claim ownership over user-uploaded content.</p>
+                      <p>9.3 Uploaded media is processed solely for detection purposes and handled according to privacy-by-design principles.</p>
+
+                      <hr />
+
+                      <h2>10. Confidentiality</h2>
+                      <p>10.1 Users agree not to disclose confidential or proprietary information related to the Platform.</p>
+                      <p>10.2 Confidentiality obligations survive termination of these Terms.</p>
+
+                      <hr />
+
+                      <h2>11. Termination</h2>
+                      <p>11.1 MAYA NETRA AI may suspend or terminate access:</p>
+                      <ul>
+                        <li>For violation of these Terms</li>
+                        <li>For misuse or unlawful activity</li>
+                        <li>At its sole discretion, with or without notice</li>
+                      </ul>
+                      <p>11.2 Users may stop using the Services at any time.</p>
+
+                      <hr />
+
+                      <h2>12. Post-Termination Obligations</h2>
+                      <p>Upon termination:</p>
+                      <ul>
+                        <li>All access rights cease immediately</li>
+                        <li>API keys or credentials must be deleted</li>
+                        <li>Outstanding obligations survive termination</li>
+                      </ul>
+
+                      <hr />
+
+                      <h2>13. Comprehensive Limitation of Liability & Disclaimer of Responsibility</h2>
+                      <p>To the <strong>maximum extent permitted by applicable law</strong>, <strong>MAYA NETRA AI</strong>, including but not limited to its <strong>creator, developers, contributors, maintainers, advisors, associated AI models, datasets, and any member of this project</strong>, <strong>shall not be responsible or liable</strong> for any loss, damage, harm, or consequence of any kind arising from or related to:</p>
+                      <ul>
+                        <li>Use or misuse of the Platform or Services</li>
+                        <li>Reliance on AI-generated detection outputs or confidence scores</li>
+                        <li>Inaccurate, incomplete, delayed, or misleading results</li>
+                        <li>Direct, indirect, incidental, consequential, special, or punitive damages</li>
+                        <li>Financial loss, reputational harm, legal claims, or penalties</li>
+                        <li>User-uploaded content without lawful consent or authority</li>
+                        <li>Misinterpretation or improper use of AI outputs</li>
+                        <li>Third-party services, hosting providers, infrastructure failures, or cyber incidents</li>
+                        <li>User-side negligence, configuration errors, or security lapses</li>
+                      </ul>
+                      <p>All Services are provided strictly on a <strong>best-effort basis</strong> and <strong>“AS IS” / “AS AVAILABLE”</strong>, without warranties of any kind, express or implied.</p>
+                      <p>Users acknowledge that <strong>they bear sole responsibility</strong> for decisions or actions taken based on the Platform’s outputs.</p>
+                      
+                      <hr />
+
+                      <h2>14. Indemnification</h2>
+                      <p>Users agree to indemnify, defend, and hold harmless MAYA NETRA AI and its associated parties from any claims, losses, liabilities, or damages arising from:</p>
+                      <ul>
+                        <li>User content</li>
+                        <li>Violation of laws</li>
+                        <li>Breach of these Terms</li>
+                      </ul>
+
+                      <hr />
+
+                      <h2>15. Modification of Terms & Policies Without Prior Notice</h2>
+                      <p>MAYA NETRA AI reserves the <strong>absolute, unconditional right</strong> to modify, amend, update, suspend, or replace these Terms & Conditions, the Privacy Policy, or any related policies <strong>at any time</strong>, <strong>with or without prior notice</strong>, and <strong>without any obligation to inform users individually</strong>.</p>
+                      <p>All modifications become <strong>effective immediately upon publication</strong> on the Platform.</p>
+                      <p>Continued use of the Services after such publication constitutes <strong>deemed and binding acceptance</strong> of the revised Terms.</p>
+                      <p>Users are solely responsible for reviewing the Terms periodically. MAYA NETRA AI shall <strong>not be liable for any loss, claim, or consequence</strong> arising from a user’s failure to review updated Terms or Policies.</p>
+
+                      <hr />
+
+                      <h2>16. Dispute Resolution</h2>
+                      <p>16.1 Parties shall first attempt amicable resolution.</p>
+                      <p>16.2 If unresolved, disputes shall be resolved by <strong>arbitration</strong> under the <strong>Arbitration and Conciliation Act, 1996</strong>.</p>
+                      <ul>
+                        <li>Seat: <strong>New Delhi, India</strong></li>
+                        <li>Language: English</li>
+                      </ul>
+                      <p>16.3 Courts at New Delhi shall have exclusive jurisdiction.</p>
+
+                      <hr />
+
+                      <h2>17. Governing Law</h2>
+                      <p>These Terms are governed by:</p>
+                      <ul>
+                        <li>Indian Contract Act, 1872</li>
+                        <li>Information Technology Act, 2000</li>
+                        <li>Digital Personal Data Protection Act, 2023</li>
+                      </ul>
+
+                      <hr />
+
+                      <h2>18. Final Provisions</h2>
+                      <p>18.1 If any provision is held invalid, remaining provisions remain enforceable.</p>
+                      <p>18.2 Failure to enforce any right shall not constitute a waiver.</p>
+                      <p>18.3 These Terms constitute the <strong>entire agreement</strong> between the User and MAYA NETRA AI.</p>
+                    </div>
+                  </ScrollArea>
+                </DialogContent>
+              </Dialog>
                 <Link href="#" className="hover:text-primary">DATA PRIVACY</Link>
             </div>
         </div>
