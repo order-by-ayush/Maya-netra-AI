@@ -799,7 +799,211 @@ export function Footer() {
                 <span>by <a href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer" className="hover:text-primary">aayush_xid_su</a></span>
             </div>
             <div className="flex gap-4">
-                <Link href="#" className="hover:text-primary">DPA</Link>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="hover:text-primary">DPA</button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px] md:max-w-2xl lg:max-w-4xl max-h-[80vh]">
+                  <DialogHeader>
+                    <DialogTitle>MAYA NETRA AI – Data Processing Agreement (DPA)</DialogTitle>
+                    <DialogDescription>
+                      (India)
+                    </DialogDescription>
+                  </DialogHeader>
+                  <ScrollArea className="h-[60vh] pr-4">
+                    <div className="prose prose-sm md:prose-base max-w-none">
+                      <p><strong>Compliance Framework:</strong> This Data Processing Agreement (“Agreement”) is compliant with the <strong>Digital Personal Data Protection Act, 2023 (DPDP Act)</strong>, <strong>Information Technology Act, 2000</strong>, <strong>SPDI Rules, 2011</strong>, <strong>CERT-In Directions (2022)</strong>, and is globally aligned with <strong>GDPR Article 28</strong> principles.</p>
+                      <p>This Agreement governs the processing of personal data by <strong>MAYA NETRA AI</strong> in its capacity as a <strong>Data Processor</strong>, acting on behalf of the <strong>Data Fiduciary (Controller)</strong>.</p>
+                      <hr />
+                      <h2>1. Definitions</h2>
+                      <p>For the purposes of this Agreement:</p>
+                      <ul>
+                        <li><strong>“Data Principal”</strong> means the individual whose personal data is processed.</li>
+                        <li><strong>“Data Fiduciary” / “Controller”</strong> means the customer or entity that determines the purpose and means of processing personal data.</li>
+                        <li><strong>“Data Processor”</strong> means <strong>MAYA NETRA AI</strong>, which processes personal data solely on documented instructions from the Controller.</li>
+                        <li><strong>“Personal Data”</strong> means any digital data relating to an identifiable natural person, as defined under the DPDP Act.</li>
+                        <li><strong>“Processing”</strong> includes collection, analysis, inference, storage, transmission, modification, or deletion of personal data.</li>
+                        <li><strong>“Applicable Law”</strong> includes the DPDP Act, IT Act 2000, SPDI Rules 2011, CERT-In Directions, and other applicable Indian data protection and cybersecurity laws.</li>
+                      </ul>
+                      <hr />
+                      <h2>2. Purpose and Scope of Processing</h2>
+                      <h3>2.1 Purpose</h3>
+                      <p>The Processor shall process personal data <strong>solely for the purpose of providing MAYA NETRA AI services</strong>, including:</p>
+                      <ul>
+                        <li>Deepfake and synthetic media detection</li>
+                        <li>AI-based authenticity verification of images and videos</li>
+                        <li>Frame-level and metadata-based analysis</li>
+                        <li>Generation of confidence scores, inference results, and detection reports</li>
+                        <li>Model improvement <strong>only where explicit, documented consent has been obtained</strong></li>
+                      </ul>
+                      <h3>2.2 Scope of Data Processed</h3>
+                      <p>Depending on the nature of usage, processed data may include:</p>
+                      <ul>
+                        <li>Uploaded or streamed image/video frames</li>
+                        <li>Facial features, landmarks, or visual patterns (non-identifying where possible)</li>
+                        <li>Synthetic manipulation indicators and metadata</li>
+                        <li>Device, browser, or session identifiers</li>
+                        <li>System logs required for security, diagnostics, or compliance</li>
+                      </ul>
+                      <p><strong>MAYA NETRA AI does not intentionally retain raw biometric data unless explicitly authorized.</strong></p>
+                      <h3>2.3 Duration</h3>
+                      <p>This Agreement remains valid for the entire duration of the service relationship between the Controller and MAYA NETRA AI.</p>
+                      <hr />
+                      <h2>3. Categories of Data Subjects</h2>
+                      <p>Processing may involve data relating to:</p>
+                      <ul>
+                        <li>End-users whose media content is analyzed</li>
+                        <li>Authorized users of the MAYA NETRA AI platform</li>
+                        <li>Developers, testers, or demo users (where applicable)</li>
+                      </ul>
+                      <hr />
+                      <h2>4. Location of Processing</h2>
+                      <p>Personal data is processed:</p>
+                      <ul>
+                        <li><strong>Within India</strong>, and/or</li>
+                        <li><strong>Locally on the Controller’s device</strong> (on-device or edge processing mode)</li>
+                      </ul>
+                      <p>Cross-border transfer of data shall not occur unless:</p>
+                      <ul>
+                        <li>Explicit written approval is provided by the Controller</li>
+                        <li>Adequate safeguards are implemented in compliance with DPDP Act requirements</li>
+                      </ul>
+                      <hr />
+                      <h2>5. Technical and Organisational Measures (TOMs)</h2>
+                      <p>The Processor shall implement industry-standard security controls, including but not limited to:</p>
+                      <h3>5.1 Confidentiality</h3>
+                      <ul>
+                        <li>Role-based access control (RBAC)</li>
+                        <li>Strong authentication mechanisms (2FA where applicable)</li>
+                        <li>Employee confidentiality agreements</li>
+                        <li>Access logging and audit trails</li>
+                      </ul>
+                      <h3>5.2 Integrity & Security</h3>
+                      <ul>
+                        <li>TLS 1.2+ encryption for data in transit</li>
+                        <li>Secure API and endpoint validation</li>
+                        <li>Cryptographic hashing and integrity checks</li>
+                        <li>Protection against tampering and unauthorized access</li>
+                      </ul>
+                      <h3>5.3 Availability</h3>
+                      <ul>
+                        <li>Secure and redundant infrastructure</li>
+                        <li>Firewalls, IDS/IPS systems</li>
+                        <li>Disaster recovery and incident response procedures</li>
+                      </ul>
+                      <h3>5.4 Data Minimisation</h3>
+                      <ul>
+                        <li>No storage of media unless contractually required</li>
+                        <li>Use of anonymized or pseudonymized features</li>
+                        <li>Real-time processing wherever feasible</li>
+                      </ul>
+                      <h3>5.5 On-Device Processing</h3>
+                      <p>Where supported:</p>
+                      <ul>
+                        <li>Media data remains on the user’s device</li>
+                        <li>No cloud uploads by default</li>
+                        <li>Zero persistent storage unless explicitly enabled</li>
+                      </ul>
+                      <hr />
+                      <h2>6. Rights of the Controller (Data Fiduciary)</h2>
+                      <p>The Controller has the right to:</p>
+                      <ul>
+                        <li>Request access to stored data (if any)</li>
+                        <li>Request correction, restriction, or deletion</li>
+                        <li>Conduct audits or request security documentation</li>
+                        <li>Instruct immediate cessation of processing</li>
+                      </ul>
+                      <p>The Processor shall act <strong>only on documented and lawful instructions</strong>.</p>
+                      <hr />
+                      <h2>7. Sub-Processing</h2>
+                      <p>The Processor may engage sub-processors <strong>only with documented approval</strong> from the Controller. Approved sub-processors may include:</p>
+                      <ul>
+                        <li>Indian cloud infrastructure providers</li>
+                        <li>Indian data centers</li>
+                        <li>Internal MAYA NETRA AI compute systems</li>
+                      </ul>
+                      <p>No foreign sub-processor shall be engaged without explicit written consent.</p>
+                      <hr />
+                      <h2>8. Data Breach Notification</h2>
+                      <p>In the event of a personal data breach, the Processor shall:</p>
+                      <ul>
+                        <li>Notify the Controller <strong>without undue delay</strong></li>
+                        <li>Provide breach details, impact assessment, and mitigation steps</li>
+                        <li>Notify <strong>CERT-In within 6 hours</strong>, as mandated</li>
+                        <li>Cooperate fully with investigation and remediation efforts</li>
+                      </ul>
+                      <hr />
+                      <h2>9. Controller Instructions</h2>
+                      <p>The Processor:</p>
+                      <ul>
+                        <li>Processes data only under documented instructions</li>
+                        <li>Shall inform the Controller if any instruction violates Applicable Law</li>
+                        <li>Maintains internal records of processing activities</li>
+                      </ul>
+                      <hr />
+                      <h2>10. Data Deletion & Return</h2>
+                      <p>Upon termination of services or upon request:</p>
+                      <ul>
+                        <li>All personal data shall be deleted or securely returned</li>
+                        <li>Backups shall be purged within a reasonable timeframe</li>
+                        <li>Training datasets shall be retained <strong>only with explicit written consent</strong></li>
+                        <li>Proof of deletion may be provided upon request</li>
+                      </ul>
+                      <hr />
+                      <h2>11. Liability & Compliance</h2>
+                      <p>Both parties agree to comply with Applicable Law.</p>
+                      <h3>Processor Liability</h3>
+                      <p>MAYA NETRA AI shall be liable for:</p>
+                      <ul>
+                        <li>Breaches caused by negligence</li>
+                        <li>Failure to implement agreed security controls</li>
+                      </ul>
+                      <h3>Controller Liability</h3>
+                      <p>The Controller is responsible for:</p>
+                      <ul>
+                        <li>Lawful collection of data</li>
+                        <li>Obtaining valid consent</li>
+                        <li>Accuracy and legality of processing instructions</li>
+                      </ul>
+                      <hr />
+                      <h2>12. Term, Termination, and Validity</h2>
+                      <p>This Agreement remains effective until:</p><ul>
+                        <li>The service relationship ends</li>
+                        <li>All personal data is deleted or returned</li>
+                        <li>Legal obligations are fulfilled</li>
+                      </ul>
+                      <hr />
+                      <h2>Annex A — Technical and Organisational Measures (TOMs)</h2>
+                      <h3>1. Physical Security</h3>
+                      <ul>
+                        <li>Secured access-controlled premises</li>
+                        <li>Visitor logs and monitoring</li>
+                        <li>Device-level access protection</li>
+                      </ul>
+                      <h3>2. Network & Infrastructure Security</h3>
+                      <ul>
+                        <li>Zero-trust administrative controls</li>
+                        <li>Firewall-protected networks</li>
+                        <li>Encrypted communication channels</li>
+                      </ul>
+                      <h3>3. Data Processing Security</h3>
+                      <ul>
+                        <li>Pseudonymization of visual features</li>
+                        <li>Isolated processing environments</li>
+                        <li>Sandboxed AI model testing</li>
+                      </ul>
+                      <h3>4. Disaster Recovery</h3>
+                      <ul>
+                        <li>High-availability infrastructure</li>
+                        <li>Secure backup and restoration processes</li>
+                        <li>Emergency incident response protocols</li>
+                      </ul>
+                      <hr />
+                      <p><strong>© 2026 MAYA NETRA AI</strong><br /><em>Built with responsibility. Designed for trust.</em></p>
+                    </div>
+                  </ScrollArea>
+                </DialogContent>
+              </Dialog>
                 <Link href="#" className="hover:text-primary">T&C</Link>
                 <Link href="#" className="hover:text-primary">IMPRINT</Link>
                 <Link href="#" className="hover:text-primary">DATA PRIVACY</Link>
