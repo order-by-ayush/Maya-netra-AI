@@ -1,9 +1,15 @@
 
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { DetectionPanel } from '@/components/detection-panel';
+import { UserNav } from '@/components/layout/user-nav';
+import { useUser } from '@/firebase';
+
 
 const DetectionPage = () => {
+  const { user, isUserLoading } = useUser();
 
   return (
     <div className="min-h-screen text-foreground font-body">
@@ -36,11 +42,7 @@ const DetectionPage = () => {
           </Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Button
-            variant="secondary"
-          >
-            Sign In
-          </Button>
+          <UserNav user={user} isLoading={isUserLoading} />
         </div>
       </header>
 

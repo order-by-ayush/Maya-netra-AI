@@ -1,10 +1,16 @@
 
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Construction } from 'lucide-react';
 import { Footer } from '@/components/layout/footer';
+import { UserNav } from '@/components/layout/user-nav';
+import { useUser } from '@/firebase';
+
 
 const ToolsPage = () => {
+  const { user, isUserLoading } = useUser();
   return (
     <div className="bg-background text-foreground min-h-screen font-body flex flex-col">
       <header className="py-4 px-8 flex justify-between items-center border-b border-border sticky top-0 bg-background/80 backdrop-blur-sm z-50">
@@ -36,7 +42,7 @@ const ToolsPage = () => {
           </Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Button variant="secondary">Sign In</Button>
+          <UserNav user={user} isLoading={isUserLoading} />
         </div>
       </header>
 

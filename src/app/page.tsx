@@ -1,16 +1,18 @@
 
 
 'use client'
-import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Sun, Moon, Eye, BrainCircuit, CheckCircle2, ShieldAlert, ShieldCheck, Zap, Cpu, MousePointerClick, LineChart, Globe, Shield } from 'lucide-react';
+import { Eye, BrainCircuit, CheckCircle2, ShieldAlert, ShieldCheck, Zap, Cpu, MousePointerClick, LineChart, Globe, Shield } from 'lucide-react';
 import { DetectionPanel } from '@/components/detection-panel';
 import { Card } from '@/components/ui/card';
 import { Footer } from '@/components/layout/footer';
+import { UserNav } from '@/components/layout/user-nav';
+import { useUser } from '@/firebase';
 
 export default function Home() {
+  const { user, isUserLoading } = useUser();
 
   return (
     <div
@@ -18,9 +20,11 @@ export default function Home() {
     >
       <header className="py-4 px-8 flex justify-between items-center bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="flex items-center gap-3">
-          <div className="bg-foreground text-background font-bold text-lg w-10 h-10 flex items-center justify-center rounded-md">
-            MI
-          </div>
+          <Link href="/">
+            <div className="bg-foreground text-background font-bold text-lg w-10 h-10 flex items-center justify-center rounded-md">
+              MI
+            </div>
+          </Link>
           <div>
             <h1 className="text-xl font-bold">MAYA-NETRA AI</h1>
             <p className="text-xs text-muted-foreground">
@@ -43,11 +47,7 @@ export default function Home() {
           </Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Button
-            variant="secondary"
-          >
-            Sign In
-          </Button>
+          <UserNav user={user} isLoading={isUserLoading} />
         </div>
       </header>
 

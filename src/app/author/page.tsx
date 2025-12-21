@@ -1,11 +1,16 @@
 
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { Github, Linkedin, Twitter, Instagram, Briefcase } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { UserNav } from '@/components/layout/user-nav';
+import { useUser } from '@/firebase';
 
 const AuthorPage = () => {
+  const { user, isUserLoading } = useUser();
   return (
     <div className="bg-background text-foreground min-h-screen font-body">
       <header className="py-4 px-8 flex justify-between items-center border-b border-border sticky top-0 bg-background/80 backdrop-blur-sm z-50">
@@ -37,7 +42,7 @@ const AuthorPage = () => {
           </Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Button variant="secondary">Sign In</Button>
+          <UserNav user={user} isLoading={isUserLoading} />
         </div>
       </header>
 
