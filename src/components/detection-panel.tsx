@@ -10,6 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 import { ResultsDisplay } from '@/components/results-display';
 import type { AnalysisResult } from '@/components/results-display';
 import { Separator } from '@/components/ui/separator';
+import { detectManipulation } from '@/ai/flows/detect-manipulation';
 
 interface DetectionPanelProps {
   isEmbedded?: boolean;
@@ -17,11 +18,12 @@ interface DetectionPanelProps {
 
 export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
   const [file, setFile] = useState<File | null>(null);
-  const [status, setStatus] = useState<'idle' | 'analyzing' | 'complete'>('idle');
+  const [status, setStatus] = useState<'idle' | 'analyzing' | 'complete' | 'error'>('idle');
   const [progress, setProgress] = useState(0);
   const { toast } = useToast();
   const inputRef = useRef<HTMLInputElement>(null);
   const [result, setResult] = useState<AnalysisResult | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const handleFileSelect = (selectedFile: File) => {
     if (selectedFile.size > 50 * 1024 * 1024) {
@@ -41,6 +43,25 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
     }
   };
 
+  const runSimulation = (duration: number, onProgress: (p: number) => void) => {
+    let currentProgress = 0;
+    const intervalTime = 50; 
+    const steps = (duration * 1000) / intervalTime;
+    const increment = 100 / steps;
+
+    return new Promise<void>((resolve) => {
+      const progressInterval = setInterval(() => {
+        currentProgress += increment;
+        onProgress(Math.min(currentProgress, 100));
+
+        if (currentProgress >= 100) {
+          clearInterval(progressInterval);
+          resolve();
+        }
+      }, intervalTime);
+    });
+  };
+
   const handleRunDetection = async () => {
     if (!file) {
       toast({
@@ -54,32 +75,48 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
     setStatus('analyzing');
     setProgress(0);
     setResult(null);
+    setError(null);
+    const startTime = Date.now();
 
-    const analysisSteps = [
-      { name: 'Uploading file', duration: 10 },
-      { name: 'Preprocessing media', duration: 15 },
-      { name: 'Running neural analysis', duration: 50 },
-      { name: 'Compiling results', duration: 25 },
-    ];
-    
-    let cumulativeProgress = 0;
-    for (const step of analysisSteps) {
-      cumulativeProgress += step.duration;
-      await new Promise(resolve => setTimeout(resolve, Math.random() * 500 + 200));
-      setProgress(cumulativeProgress / analysisSteps.reduce((acc, s) => acc + s.duration, 0) * 100);
+    try {
+      const analysisPromise = new Promise<AnalysisResult>(async (resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = async () => {
+          try {
+            const mediaDataUri = reader.result as string;
+            const res = await detectManipulation({ mediaDataUri });
+            const endTime = Date.now();
+            const inferenceTime = parseFloat(((endTime - startTime) / 1000).toFixed(2));
+            resolve({ ...res, inferenceTime });
+          } catch(e) {
+            reject(e);
+          }
+        };
+        reader.onerror = (err) => {
+          reject(new Error("Failed to read the file."));
+        }
+      });
+      
+      const simulationPromise = runSimulation(5, setProgress);
+
+      const [apiResult] = await Promise.all([analysisPromise, simulationPromise]);
+
+      setResult(apiResult);
+      setStatus('complete');
+      setProgress(100);
+
+    } catch (e: any) {
+      console.error(e);
+      const errorMessage = e.message || "An unexpected error occurred during analysis.";
+      setError(errorMessage);
+      setStatus('error');
+      toast({
+        variant: "destructive",
+        title: "Analysis Failed",
+        description: errorMessage,
+      });
     }
-    
-    const confidence = Math.floor(Math.random() * 40) + 60; // 60-99% for AI, or low for real
-    const isAi = Math.random() > 0.3; // 70% chance of being AI
-    
-    const finalResult = {
-      confidence: isAi ? confidence : 100 - confidence,
-      label: isAi ? 'AI-Generated' : 'Real' as 'AI-Generated' | 'Real',
-      inferenceTime: parseFloat((Math.random() * 2 + 0.5).toFixed(2)),
-    };
-    
-    setResult(finalResult);
-    setStatus('complete');
   };
 
   const handleReset = () => {
@@ -87,6 +124,7 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
     setStatus('idle');
     setProgress(0);
     setResult(null);
+    setError(null);
   };
 
   return (
@@ -110,7 +148,7 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
             <div className="flex justify-between items-start">
               <div>
                 <CardTitle>Upload media</CardTitle>
-                <CardDescription>Supported: JPG, PNG, MP4 (UI-only simulation)</CardDescription>
+                <CardDescription>Supported: JPG, PNG, MP4</CardDescription>
               </div>
               <Badge variant="outline">max ~50MB</Badge>
             </div>
@@ -118,6 +156,13 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
           <CardContent className="space-y-6">
             <div 
               className="relative border-2 border-dashed border-border rounded-lg h-64 flex flex-col items-center justify-center text-center cursor-pointer hover:border-primary transition-colors"
+              onDragOver={(e) => e.preventDefault()}
+              onDrop={(e) => {
+                e.preventDefault();
+                if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+                  handleFileSelect(e.dataTransfer.files[0]);
+                }
+              }}
               onClick={() => inputRef.current?.click()}
             >
               {file ? (
@@ -145,7 +190,7 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
                 <p className="font-semibold">Tip:</p>
                 <p>Try both an image and a short MP4 to see different<br/>explanation copy.</p>
               </div>
-              <Button onClick={handleRunDetection} disabled={status === 'analyzing'}>
+              <Button onClick={handleRunDetection} disabled={status === 'analyzing' || !file}>
                 {status === 'analyzing' ? 'Analyzing...' : 'Run detection'}
               </Button>
             </div>
@@ -159,7 +204,12 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
               <CardTitle>Result</CardTitle>
               <CardDescription>Confidence score, verdict badge, inference time, and summary.</CardDescription>
             </div>
-            <Badge variant={status === 'idle' ? 'outline' : 'default'}>{status === 'idle' ? 'Awaiting analysis' : status === 'analyzing' ? 'In progress' : 'Complete'}</Badge>
+            <Badge variant={status === 'idle' ? 'outline' : status === 'error' ? 'destructive' : 'default'}>
+              {status === 'idle' && 'Awaiting analysis'}
+              {status === 'analyzing' && 'In progress'}
+              {status === 'complete' && 'Complete'}
+              {status === 'error' && 'Error'}
+            </Badge>
           </CardHeader>
           <CardContent className="flex-grow flex flex-col">
             {status === 'idle' && (
@@ -175,21 +225,30 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
                 </ul>
               </div>
             )}
-            {status === 'analyzing' && (
+            {(status === 'analyzing' || (status === 'complete' && !result)) && (
               <div className="h-full flex flex-col justify-center items-center text-center">
                 <p className="font-headline text-lg mb-4">Analyzing...</p>
                  <Progress value={progress} className="w-full max-w-sm" />
+                 <p className="text-right text-sm mt-1 text-muted-foreground w-full max-w-sm">{progress.toFixed(0)}%</p>
               </div>
             )}
             {status === 'complete' && result && file && (
               <ResultsDisplay result={result} file={file} onReset={handleReset} analysisType={file.type.startsWith('image') ? 'image' : 'video'} />
             )}
+             {status === 'error' && (
+              <div className="h-full flex flex-col justify-center items-center text-center text-destructive">
+                <p className="font-semibold mb-2">Analysis Failed</p>
+                <p className="text-sm">{error}</p>
+              </div>
+            )}
             
             <div className="mt-auto pt-8">
                <Separator className="mb-4" />
               <p className="text-sm text-muted-foreground mb-2">Pipeline</p>
-              <Progress value={progress} />
-               <p className="text-right text-sm mt-1 text-muted-foreground">{progress.toFixed(0)}%</p>
+              <Progress value={status === 'complete' || status === 'analyzing' ? progress : 0} />
+               <p className="text-right text-sm mt-1 text-muted-foreground">
+                {status === 'complete' || status === 'analyzing' ? progress.toFixed(0) : 0}%
+               </p>
             </div>
           </CardContent>
         </Card>
