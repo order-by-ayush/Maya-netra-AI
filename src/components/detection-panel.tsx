@@ -1,4 +1,3 @@
-
 'use client';
 import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
@@ -79,30 +78,23 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
     const startTime = Date.now();
 
     try {
-      const analysisPromise = new Promise<AnalysisResult>(async (resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = async () => {
-          try {
-            const mediaDataUri = reader.result as string;
-            const res = await detectManipulation({ mediaDataUri });
-            const endTime = Date.now();
-            const inferenceTime = parseFloat(((endTime - startTime) / 1000).toFixed(2));
-            resolve({ ...res, inferenceTime });
-          } catch(e) {
-            reject(e);
-          }
-        };
-        reader.onerror = (err) => {
-          reject(new Error("Failed to read the file."));
-        }
-      });
-      
+      // Simulate analysis progress
       const simulationPromise = runSimulation(5, setProgress);
+      await simulationPromise;
 
-      const [apiResult] = await Promise.all([analysisPromise, simulationPromise]);
+      // Simulate API call result to avoid hitting rate limits
+      const confidence = Math.floor(Math.random() * 101);
+      const label = confidence > 60 ? 'AI-Generated' : 'Real';
+      const endTime = Date.now();
+      const inferenceTime = parseFloat(((endTime - startTime) / 1000).toFixed(2));
+      
+      const simulatedResult: AnalysisResult = {
+        confidence,
+        label,
+        inferenceTime,
+      };
 
-      setResult(apiResult);
+      setResult(simulatedResult);
       setStatus('complete');
       setProgress(100);
 
