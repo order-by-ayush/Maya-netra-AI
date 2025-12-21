@@ -29,13 +29,13 @@ export default function Home() {
           </div>
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-          <Link href="/" className="hover:text-primary">
+          <Link href="/" className="text-primary font-bold">
             Home
           </Link>
           <Link href="/detect" className="hover:text-primary">
             Detect
           </Link>
-          <Link href="#" className="hover:text-primary">
+          <Link href="/tools" className="hover:text-primary">
             Tools
           </Link>
           <Link href="/author" className="hover:text-primary">
