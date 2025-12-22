@@ -46,9 +46,13 @@ const AuthorPage = () => {
         <Card className="bg-card/80 border-border p-8 md:p-12 rounded-2xl shadow-lg max-w-4xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div className="md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
-              <div className="w-48 h-48 rounded-full bg-primary text-primary-foreground flex items-center justify-center mb-4 border-4 border-primary/20 shadow-lg">
-                <span className="text-6xl font-bold">AD</span>
-              </div>
+              <Image
+                src="/xd.jpg"
+                alt="Ayush Das"
+                width={192}
+                height={192}
+                className="rounded-full mb-4 border-4 border-primary/20 shadow-lg object-cover"
+              />
               <h2 className="text-3xl font-bold text-primary">
                 <Link href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer">Ayush Das</Link>
               </h2>
@@ -95,7 +99,7 @@ const AuthorPage = () => {
                   </Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link href="#" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://portfoliolinux.vercel.app/" target="_blank" rel="noopener noreferrer">
                     <Briefcase className="mr-2" /> Portfolio
                   </Link>
                 </Button>
