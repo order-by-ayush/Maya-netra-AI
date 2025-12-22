@@ -44,7 +44,7 @@ export function Header() {
         <div>
           <h1 className="text-xl font-bold">MAYA-NETRA AI</h1>
           <p className="text-xs text-muted-foreground">
-            Private-by-design verification
+            See the truth. Secure the real
           </p>
         </div>
       </div>
