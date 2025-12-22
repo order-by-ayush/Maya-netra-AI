@@ -51,7 +51,7 @@ const AuthorPage = () => {
                 alt="Ayush Das"
                 width={192}
                 height={192}
-                className="rounded-full mb-4 border-4 border-primary/20 shadow-lg object-cover"
+                className="rounded-full mb-4 border-4 border-primary/20 shadow-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-2xl"
               />
               <h2 className="text-3xl font-bold text-primary">
                 <Link href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer">Ayush Das</Link>
