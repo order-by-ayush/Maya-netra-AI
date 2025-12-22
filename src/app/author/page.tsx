@@ -27,7 +27,7 @@ const AuthorPage = () => {
               <h2 className="text-2xl md:text-3xl font-bold text-primary">
                 <Link href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer">Ayush Das</Link>
               </h2>
-              <p className="text-muted-foreground">Cybersecurity Enthusiast & AI Developer</p>
+              <p className="text-muted-foreground">Cybersecurity Enthusiast</p>
               <div className="flex gap-4 mt-4 justify-center md:justify-start">
                 <Link href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary"><Github /></Link>
                 <Link href="https://linkedin.com/in/ayushdas-11am" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary"><Linkedin /></Link>
