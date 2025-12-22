@@ -8,11 +8,8 @@ import { Eye, BrainCircuit, CheckCircle2, ShieldAlert, ShieldCheck, Zap, Cpu, Mo
 import { DetectionPanel } from '@/components/detection-panel';
 import { Card } from '@/components/ui/card';
 import { Footer } from '@/components/layout/footer';
-import { UserNav } from '@/components/layout/user-nav';
-import { useUser } from '@/firebase';
 
 export default function Home() {
-  const { user, isUserLoading } = useUser();
 
   return (
     <div
@@ -47,7 +44,6 @@ export default function Home() {
           </Link>
         </nav>
         <div className="flex items-center gap-4">
-          <UserNav user={user} isLoading={isUserLoading} />
         </div>
       </header>
 
