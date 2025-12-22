@@ -2,7 +2,7 @@
 'use client';
 
 import { useAuth } from '@/firebase';
-import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithRedirect, signOut } from 'firebase/auth';
 import { useToast } from './use-toast';
 import { useRouter } from 'next/navigation';
 
@@ -14,12 +14,8 @@ export function useAuthHandler() {
   const handleGoogleSignIn = async () => {
     const provider = new GoogleAuthProvider();
     try {
-      await signInWithPopup(auth, provider);
-      toast({
-        title: 'Signed in',
-        description: 'You have successfully signed in with Google.',
-      });
-      router.push('/');
+      // Use signInWithRedirect instead of signInWithPopup
+      await signInWithRedirect(auth, provider);
     } catch (error: any) {
       console.error('Google Sign-In Error:', error);
       toast({
