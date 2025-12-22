@@ -8,7 +8,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 export function Footer() {
   return (
     <footer className="bg-[#7b2cbf] text-gray-200 pt-16 font-body">
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8 pb-8 border-b border-border">
           {/* Column 1: About */}
           <div className="col-span-1 md:col-span-2">
@@ -784,7 +784,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-            <div className="flex items-center gap-6 text-sm">
+            <div className="flex items-center gap-4 text-sm flex-wrap justify-center">
                 <Link href="https://linkedin.com/in/ayushdas-11am" target="_blank" rel="noopener noreferrer" className="hover:text-primary">LINKEDIN →</Link>
                 <Link href="https://instagram.com/aayush_xid_su" target="_blank" rel="noopener noreferrer" className="hover:text-primary">INSTAGRAM →</Link>
                 <Link href="https://x.com/aayushxidsu" target="_blank" rel="noopener noreferrer" className="hover:text-primary">TWITTER →</Link>
@@ -798,7 +798,7 @@ export function Footer() {
                 <Heart className="w-4 h-4 text-red-500" />
                 <span>by <a href="https://github.com/aayush-xid-su" target="_blank" rel="noopener noreferrer" className="hover:text-primary">aayush_xid_su</a></span>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-wrap justify-center">
               <Dialog>
                 <DialogTrigger asChild>
                   <button className="hover:text-primary">DPA</button>
@@ -1623,7 +1623,7 @@ export function Footer() {
         </div>
         
         <div className="text-center py-8">
-            <h1 className="text-7xl md:text-9xl font-black text-white tracking-tighter">MAYA-NETRA AI</h1>
+            <h1 className="text-5xl sm:text-7xl md:text-9xl font-black text-white tracking-tighter">MAYA-NETRA AI</h1>
         </div>
 
       </div>

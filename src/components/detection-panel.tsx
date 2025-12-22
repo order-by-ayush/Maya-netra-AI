@@ -122,14 +122,14 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
   return (
     <>
       {!isEmbedded && (
-         <div className="flex justify-between items-center mb-8">
+         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div>
               <h2 className="text-3xl font-bold">Detection</h2>
               <p className="text-muted-foreground">
                 Upload a file to preview the full experience: drag-and-drop, scanning animation, progress, and results.
               </p>
             </div>
-            <Button variant="ghost" onClick={handleReset}>Reset</Button>
+            <Button variant="ghost" onClick={handleReset} className="self-start md:self-center">Reset</Button>
           </div>
       )}
 
@@ -137,17 +137,17 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
         {/* Left Panel */}
         <Card className="bg-card/50">
           <CardHeader>
-            <div className="flex justify-between items-start">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
               <div>
                 <CardTitle>Upload media</CardTitle>
                 <CardDescription>Supported: JPG, PNG, MP4</CardDescription>
               </div>
-              <Badge variant="outline">max ~50MB</Badge>
+              <Badge variant="outline" className='self-start sm:self-center'>max ~50MB</Badge>
             </div>
           </CardHeader>
           <CardContent className="space-y-6">
             <div 
-              className="relative border-2 border-dashed border-border rounded-lg h-64 flex flex-col items-center justify-center text-center cursor-pointer hover:border-primary transition-colors"
+              className="relative border-2 border-dashed border-border rounded-lg h-64 flex flex-col items-center justify-center text-center cursor-pointer hover:border-primary transition-colors p-4"
               onDragOver={(e) => e.preventDefault()}
               onDrop={(e) => {
                 e.preventDefault();
@@ -158,7 +158,7 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
               onClick={() => inputRef.current?.click()}
             >
               {file ? (
-                <p className='font-medium'>{file.name}</p>
+                <p className='font-medium break-all'>{file.name}</p>
               ) : (
                 <>
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center mb-4">
@@ -177,12 +177,12 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
               />
             </div>
 
-            <div className="flex justify-between items-end">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
               <div className="text-xs text-muted-foreground">
                 <p className="font-semibold">Tip:</p>
                 <p>Try both an image and a short MP4 to see different<br/>explanation copy.</p>
               </div>
-              <Button onClick={handleRunDetection} disabled={status === 'analyzing' || !file}>
+              <Button onClick={handleRunDetection} disabled={status === 'analyzing' || !file} className="w-full sm:w-auto">
                 {status === 'analyzing' ? 'Analyzing...' : 'Run detection'}
               </Button>
             </div>
@@ -191,12 +191,12 @@ export const DetectionPanel = ({ isEmbedded = false }: DetectionPanelProps) => {
 
         {/* Right Panel */}
         <Card className="bg-card/50 flex flex-col">
-          <CardHeader className="flex flex-row justify-between items-start">
+          <CardHeader className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
             <div>
               <CardTitle>Result</CardTitle>
               <CardDescription>Confidence score, verdict badge, inference time, and summary.</CardDescription>
             </div>
-            <Badge variant={status === 'idle' ? 'outline' : status === 'error' ? 'destructive' : 'default'}>
+            <Badge variant={status === 'idle' ? 'outline' : status === 'error' ? 'destructive' : 'default'} className="self-start sm:self-center">
               {status === 'idle' && 'Awaiting analysis'}
               {status === 'analyzing' && 'In progress'}
               {status === 'complete' && 'Complete'}

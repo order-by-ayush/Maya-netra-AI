@@ -13,7 +13,7 @@ const DetectionPage = () => {
     <div className="min-h-screen text-foreground font-body">
       <Header />
 
-      <main className="container mx-auto px-8 py-12">
+      <main className="container mx-auto px-4 sm:px-8 py-12">
         <DetectionPanel />
       </main>
     </div>

@@ -71,31 +71,18 @@ export function ResultsDisplay({ result, file, onReset, analysisType }: ResultsD
   const confidenceColor = isAiGenerated ? 'text-destructive' : 'text-green-500';
 
   return (
-    <div className="flex flex-col md:flex-row gap-8">
-      <div className="w-full md:w-1/2">
-        <Card className="overflow-hidden">
-          <CardContent className="p-0">
-            {analysisType === 'image' ? (
-              <Image src={fileUrl} alt="Analyzed image" width={800} height={600} className="w-full h-auto object-contain max-h-[400px]" />
-            ) : (
-              <video src={fileUrl} controls className="w-full h-auto max-h-[400px]" />
-            )}
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="w-full md:w-1/2 flex flex-col gap-4">
-        <h3 className="font-headline text-2xl font-bold">Analysis Report</h3>
+    <div className="flex flex-col gap-4">
+        <h3 className="font-headline text-xl md:text-2xl font-bold">Analysis Report</h3>
         
         <Card>
-          <CardContent className="p-6 flex items-center justify-between">
+          <CardContent className="p-4 sm:p-6 flex items-center justify-between">
             <div>
               <p className="text-sm text-muted-foreground">Result</p>
-              <p className={cn("text-2xl font-bold", isAiGenerated ? 'text-destructive' : 'text-green-500')}>
+              <p className={cn("text-xl sm:text-2xl font-bold", isAiGenerated ? 'text-destructive' : 'text-green-500')}>
                 {result.label}
               </p>
             </div>
-            {isAiGenerated ? <ShieldAlert className="w-10 h-10 text-destructive" /> : <CheckCircle className="w-10 h-10 text-green-500" />}
+            {isAiGenerated ? <ShieldAlert className="w-8 h-8 sm:w-10 sm:h-10 text-destructive" /> : <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-green-500" />}
           </CardContent>
         </Card>
 
@@ -103,13 +90,13 @@ export function ResultsDisplay({ result, file, onReset, analysisType }: ResultsD
           <Card>
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground flex items-center gap-2"><BarChart className="w-4 h-4" />Confidence</p>
-              <p className={cn("text-3xl font-bold", confidenceColor)}>{result.confidence}%</p>
+              <p className={cn("text-2xl sm:text-3xl font-bold", confidenceColor)}>{result.confidence}%</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground flex items-center gap-2"><Clock className="w-4 h-4" />Inference Time</p>
-              <p className="text-3xl font-bold">{result.inferenceTime}s</p>
+              <p className="text-2xl sm:text-3xl font-bold">{result.inferenceTime}s</p>
             </CardContent>
           </Card>
         </div>
@@ -125,7 +112,6 @@ export function ResultsDisplay({ result, file, onReset, analysisType }: ResultsD
             Analyze Another File
           </Button>
         </div>
-      </div>
       
       <Dialog open={isExplainModalOpen} onOpenChange={setIsExplainModalOpen}>
         <DialogContent className="sm:max-w-[525px]">

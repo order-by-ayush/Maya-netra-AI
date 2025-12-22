@@ -18,7 +18,7 @@ export default function Home() {
     >
       <Header />
 
-      <main className="container mx-auto px-8 py-20 grid gap-16 items-center">
+      <main className="container mx-auto px-4 sm:px-8 py-12 md:py-20 grid gap-12 md:gap-16 items-center">
         <div className="space-y-6 text-center">
           <Badge
             variant="outline"
@@ -27,7 +27,7 @@ export default function Home() {
             <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
             Neural forensic scan • MVP UI
           </Badge>
-          <h2 className="text-5xl font-bold leading-tight max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight max-w-4xl mx-auto">
             Identify{' '}
             <span className="text-primary">AI-generated</span>{' '}
             videos and images with confidence.
@@ -48,13 +48,13 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="bg-card/50 border border-border rounded-2xl p-6 shadow-lg">
+        <div className="bg-card/50 border border-border rounded-2xl p-4 sm:p-6 shadow-lg">
           <DetectionPanel isEmbedded={true} />
         </div>
 
-        <section className="py-20">
+        <section className="py-12 md:py-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold">How It Works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">How It Works</h2>
             <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
               Our three-step process makes deepfake detection simple and reliable
             </p>
@@ -63,7 +63,7 @@ export default function Home() {
             <div className="absolute top-1/2 left-0 right-0 h-px bg-border -translate-y-16 hidden md:block"></div>
             <div className="absolute top-1/2 left-1/4 w-1/2 h-px bg-border -translate-y-16 hidden md:block"></div>
             
-            <Card className="bg-card/50 text-center p-8 relative transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
+            <Card className="bg-card/50 text-center p-8 relative transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg mt-8 md:mt-0">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">01</div>
               <div className="p-4 rounded-full bg-blue-500/10 inline-block mb-4">
                 <Eye className="w-8 h-8 text-blue-500" />
@@ -73,7 +73,7 @@ export default function Home() {
                 Upload your image or video file through our secure interface
               </p>
             </Card>
-            <Card className="bg-card/50 text-center p-8 relative transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
+            <Card className="bg-card/50 text-center p-8 relative transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg mt-8 md:mt-0">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">02</div>
               <div className="p-4 rounded-full bg-pink-500/10 inline-block mb-4">
                 <BrainCircuit className="w-8 h-8 text-pink-500" />
@@ -83,7 +83,7 @@ export default function Home() {
                 Our advanced neural networks analyze the content for manipulation signs
               </p>
             </Card>
-            <Card className="bg-card/50 text-center p-8 relative transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
+            <Card className="bg-card/50 text-center p-8 relative transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg mt-8 md:mt-0">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">03</div>
               <div className="p-4 rounded-full bg-green-500/10 inline-block mb-4">
                 <CheckCircle2 className="w-8 h-8 text-green-500" />
@@ -96,9 +96,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="py-12 md:py-20">
            <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold">Real-world Implications</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Real-world Implications</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="bg-destructive/10 border-destructive/30 p-6 transition-all duration-300 hover:scale-105 hover:shadow-destructive/20 hover:shadow-lg">
@@ -160,9 +160,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="py-12 md:py-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold">Why Thousands Trust Our Deepfake Detection Tool</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Why Thousands Trust Our Deepfake Detection Tool</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="bg-card/50 p-6 transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
