@@ -6,27 +6,14 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Chrome } from 'lucide-react';
 import { useAuthHandler } from '@/hooks/use-auth-handler';
+import { Header } from '@/components/layout/header';
 
 const LoginPage = () => {
   const { handleGoogleSignIn } = useAuthHandler();
 
   return (
     <div className="bg-background text-foreground min-h-screen font-body flex flex-col">
-       <header className="py-4 px-8 flex justify-between items-center border-b border-border sticky top-0 bg-background/80 backdrop-blur-sm z-50">
-        <div className="flex items-center gap-3">
-          <Link href="/">
-            <div className="bg-foreground text-background font-bold text-lg w-10 h-10 flex items-center justify-center rounded-md">
-              MI
-            </div>
-          </Link>
-          <div>
-            <h1 className="text-xl font-bold">MAYA-NETRA AI</h1>
-            <p className="text-xs text-muted-foreground">
-              Private-by-design verification
-            </p>
-          </div>
-        </div>
-      </header>
+       <Header />
       <main className="flex-grow flex items-center justify-center">
         <Card className="w-full max-w-md mx-auto">
           <CardHeader className="text-center">

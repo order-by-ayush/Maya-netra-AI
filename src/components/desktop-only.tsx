@@ -1,8 +1,10 @@
+
 'use client';
 
 import { Laptop } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Header } from '@/components/layout/header';
 
 export function DesktopOnly({ onContinue }: { onContinue: () => void }) {
   return (

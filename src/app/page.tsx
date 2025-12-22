@@ -8,6 +8,7 @@ import { Eye, BrainCircuit, CheckCircle2, ShieldAlert, ShieldCheck, Zap, Cpu, Mo
 import { DetectionPanel } from '@/components/detection-panel';
 import { Card } from '@/components/ui/card';
 import { Footer } from '@/components/layout/footer';
+import { Header } from '@/components/layout/header';
 
 export default function Home() {
 
@@ -15,37 +16,7 @@ export default function Home() {
     <div
       className={`min-h-screen text-foreground font-body bg-cover bg-center`}
     >
-      <header className="py-4 px-8 flex justify-between items-center bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
-        <div className="flex items-center gap-3">
-          <Link href="/">
-            <div className="bg-foreground text-background font-bold text-lg w-10 h-10 flex items-center justify-center rounded-md">
-              MI
-            </div>
-          </Link>
-          <div>
-            <h1 className="text-xl font-bold">MAYA-NETRA AI</h1>
-            <p className="text-xs text-muted-foreground">
-              Private-by-design verification
-            </p>
-          </div>
-        </div>
-        <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-          <Link href="/" className="text-primary font-bold">
-            Home
-          </Link>
-          <Link href="/detect" className="hover:text-primary">
-            Detect
-          </Link>
-          <Link href="/tools" className="hover:text-primary">
-            Tools
-          </Link>
-          <Link href="/author" className="hover:text-primary">
-            Author
-          </Link>
-        </nav>
-        <div className="flex items-center gap-4">
-        </div>
-      </header>
+      <Header />
 
       <main className="container mx-auto px-8 py-20 grid gap-16 items-center">
         <div className="space-y-6 text-center">
