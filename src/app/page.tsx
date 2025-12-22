@@ -92,7 +92,7 @@ export default function Home() {
             <div className="absolute top-1/2 left-0 right-0 h-px bg-border -translate-y-16 hidden md:block"></div>
             <div className="absolute top-1/2 left-1/4 w-1/2 h-px bg-border -translate-y-16 hidden md:block"></div>
             
-            <Card className="bg-card/50 text-center p-8 relative">
+            <Card className="bg-card/50 text-center p-8 relative transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">01</div>
               <div className="p-4 rounded-full bg-blue-500/10 inline-block mb-4">
                 <Eye className="w-8 h-8 text-blue-500" />
@@ -102,7 +102,7 @@ export default function Home() {
                 Upload your image or video file through our secure interface
               </p>
             </Card>
-            <Card className="bg-card/50 text-center p-8 relative">
+            <Card className="bg-card/50 text-center p-8 relative transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">02</div>
               <div className="p-4 rounded-full bg-pink-500/10 inline-block mb-4">
                 <BrainCircuit className="w-8 h-8 text-pink-500" />
@@ -112,7 +112,7 @@ export default function Home() {
                 Our advanced neural networks analyze the content for manipulation signs
               </p>
             </Card>
-            <Card className="bg-card/50 text-center p-8 relative">
+            <Card className="bg-card/50 text-center p-8 relative transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">03</div>
               <div className="p-4 rounded-full bg-green-500/10 inline-block mb-4">
                 <CheckCircle2 className="w-8 h-8 text-green-500" />
@@ -130,7 +130,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold">Real-world Implications</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="bg-destructive/10 border-destructive/30 p-6">
+            <Card className="bg-destructive/10 border-destructive/30 p-6 transition-all duration-300 hover:scale-105 hover:shadow-destructive/20 hover:shadow-lg">
               <div className="flex items-start gap-4">
                 <ShieldAlert className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
                 <div>
@@ -144,7 +144,7 @@ export default function Home() {
                 </div>
               </div>
             </Card>
-             <Card className="bg-green-500/10 border-green-500/30 p-6">
+             <Card className="bg-green-500/10 border-green-500/30 p-6 transition-all duration-300 hover:scale-105 hover:shadow-green-500/20 hover:shadow-lg">
               <div className="flex items-start gap-4">
                 <ShieldCheck className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                 <div>
@@ -158,7 +158,7 @@ export default function Home() {
                 </div>
               </div>
             </Card>
-            <Card className="bg-green-500/10 border-green-500/30 p-6">
+            <Card className="bg-green-500/10 border-green-500/30 p-6 transition-all duration-300 hover:scale-105 hover:shadow-green-500/20 hover:shadow-lg">
               <div className="flex items-start gap-4">
                 <Zap className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                 <div>
@@ -172,7 +172,7 @@ export default function Home() {
                 </div>
               </div>
             </Card>
-            <Card className="bg-secondary/50 p-6">
+            <Card className="bg-secondary/50 p-6 transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
               <div className="flex items-start gap-4">
                 <Cpu className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <div>
@@ -194,7 +194,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold">Why Thousands Trust Our Deepfake Detection Tool</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="bg-card/50 p-6">
+            <Card className="bg-card/50 p-6 transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
               <div className="flex flex-col items-center text-center">
                 <div className="p-3 rounded-full bg-primary/10 inline-block mb-4">
                   <MousePointerClick className="w-8 h-8 text-primary" />
@@ -205,7 +205,7 @@ export default function Home() {
                 </p>
               </div>
             </Card>
-            <Card className="bg-card/50 p-6">
+            <Card className="bg-card/50 p-6 transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
               <div className="flex flex-col items-center text-center">
                 <div className="p-3 rounded-full bg-primary/10 inline-block mb-4">
                   <LineChart className="w-8 h-8 text-primary" />
@@ -216,7 +216,7 @@ export default function Home() {
                 </p>
               </div>
             </Card>
-            <Card className="bg-card/50 p-6">
+            <Card className="bg-card/50 p-6 transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
               <div className="flex flex-col items-center text-center">
                 <div className="p-3 rounded-full bg-primary/10 inline-block mb-4">
                   <Globe className="w-8 h-8 text-primary" />
@@ -227,7 +227,7 @@ export default function Home() {
                 </p>
               </div>
             </Card>
-            <Card className="bg-card/50 p-6">
+            <Card className="bg-card/50 p-6 transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
               <div className="flex flex-col items-center text-center">
                 <div className="p-3 rounded-full bg-primary/10 inline-block mb-4">
                   <Shield className="w-8 h-8 text-primary" />
