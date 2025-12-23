@@ -38,7 +38,7 @@ export function Header() {
       <div className="flex items-center gap-3">
         <Link href="/" onClick={() => setIsSheetOpen(false)}>
           <div className="bg-foreground text-background font-bold text-lg w-10 h-10 flex items-center justify-center rounded-md">
-            MI
+            @
           </div>
         </Link>
         <div>
